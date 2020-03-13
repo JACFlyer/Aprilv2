@@ -16,7 +16,7 @@ tools:context=".controller.journal.JournalFragment">
   app:layout_constraintEnd_toEndOf="parent"
   app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
   android:orientation="vertical"
-  android:background="@color/seafoam"/>
+  android:background="@color/colorPrimary"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
