@@ -32,20 +32,20 @@ public interface FetalConditionDao {
   List<FetalCondition> select();
 
 
-  @Query("SELECT * FROM FetalCondition WHERE fetal_id = :id")
-  Single<ClientProfile> select(long id);
+//  @Query("SELECT * FROM FetalCondition WHERE fetal_id = :id")
+//  Single<ClientProfile> select(long id);
 
 
 
   /** Establishing Update CRUD-Operation **/
-  @Update
-  Single<Long> update(FetalCondition fetalCondition);
+//  @Update
+//  Single<Long> update(FetalCondition fetalCondition);
 
-  @Update
-  Single<List<Long>> update(Collection<FetalCondition> fetalConditions);
+//  @Update
+//  Single<List<Long>> update(Collection<FetalCondition> fetalConditions);
 
-  @Update
-  Single<List<Long>> update(FetalCondition... fetalConditions);
+//  @Update
+//  Single<List<Long>> update(FetalCondition... fetalConditions);
 
 
 

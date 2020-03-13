@@ -3,4 +3,10 @@
 
   <!-- TODO: Remove or change this placeholder text -->
   <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="text_alert">text_alert</string>
+  <string name="text_april_start">text_april_start</string>
+  <string name="text_assessment">text_assessment</string>
+  <string name="text_journal">text_journal</string>
+  <string name="text_landing_page">text_landing_page</string>
+  <string name="text_lessons">text_lessons</string>
 </resources>

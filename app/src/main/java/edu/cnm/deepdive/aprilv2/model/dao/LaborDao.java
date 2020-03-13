@@ -30,24 +30,24 @@ public interface LaborDao {
 
 
   /** Establishing Read CRUD-Operation **/
-  @Query("SELECT * FROM Labor ORDER BY labor_id")
-  List<FetalCondition> select();
+//  @Query("SELECT * FROM Labor ORDER BY labor_id")
+//  List<FetalCondition> select();
 
 
-  @Query("SELECT * FROM Labor WHERE labor_id = :id")
-  Single<ClientProfile> select(long id);
+ // @Query("SELECT * FROM Labor WHERE labor_id = :id")
+//  Single<ClientProfile> select(long id);
 
 
 
   /** Establishing Update CRUD-Operation **/
-  @Update
-  Single<Long> update(Labor labor);
+ // @Update
+//  Single<Long> update(Labor labor);
 
-  @Update
-  Single<List<Long>> update(Collection<Labor> labors);
+ // @Update
+//  Single<List<Long>> update(Collection<Labor> labors);
 
-  @Update
-  Single<List<Long>> update(Labor... labors);
+//  @Update
+ // Single<List<Long>> update(Labor... labors);
 
 
   /** Establishing Delete CRUD-operation **/

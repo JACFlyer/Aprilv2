@@ -41,14 +41,14 @@ public interface ClientProfileDao {
 
 
   /** Establishing Update CRUD-Operation **/
-  @Update
-  Single<Long> update(ClientProfile clientProfile);
+ // @Update
+ // Single<Long> update(ClientProfile clientProfile);
 
-  @Update
-  Single<List<Long>> update(Collection<ClientProfile> clientProfiles);
+ // @Update
+//  Single<List<Long>> update(Collection<ClientProfile> clientProfiles);
 
-  @Update
-  Single<List<Long>> update(ClientProfile... clientProfiles);
+ // @Update
+//  Single<List<Long>> update(ClientProfile... clientProfiles);
 
 
 

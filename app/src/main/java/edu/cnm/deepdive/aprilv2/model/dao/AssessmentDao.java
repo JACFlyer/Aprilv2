@@ -33,14 +33,14 @@ public interface AssessmentDao {
 
 
   /** Establishing Update CRUD-Operation **/
-  @Update
-  Single<Long> update(Assessment assessment);
+//  @Update
+//  Single<Long> update(Assessment assessment);
 
-  @Update
-  Single<List<Long>> update(Collection<Assessment> assessments);
+//  @Update
+//  Single<List<Long>> update(Collection<Assessment> assessments);
 
-  @Update
-  Single<List<Long>> update(Assessment... assessments);
+ // @Update
+ // Single<List<Long>> update(Assessment... assessments);
 
 
   /** Establishing Delete CRUD-Operation **/
