@@ -26,6 +26,7 @@ import java.util.Date;
 
 public class Assessment {
 
+  public static long getAssessmentId;
   @ColumnInfo(name = "assessment_id")
   @PrimaryKey(autoGenerate = true)
   private long id;

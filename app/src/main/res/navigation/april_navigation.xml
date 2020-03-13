@@ -7,7 +7,7 @@
 
   <fragment
     android:id="@+id/aprilStart"
-    android:name="edu.cnm.deepdive.aprilv2.controller.AprilStart"
+    android:name="edu.cnm.deepdive.aprilv2.controller.aprilstart.AprilStartFragment"
     android:label="fragment_april_start"
     tools:layout="@layout/fragment_april_start">
     <action
@@ -19,7 +19,7 @@
   </fragment>
   <fragment
     android:id="@+id/registration"
-    android:name="edu.cnm.deepdive.aprilv2.controller.Registration"
+    android:name="edu.cnm.deepdive.aprilv2.controller.registration.RegistrationFragment"
     android:label="fragment_registration"
     tools:layout="@layout/fragment_registration">
     <action
@@ -31,7 +31,7 @@
   </fragment>
   <fragment
     android:id="@+id/profileFragment"
-    android:name="edu.cnm.deepdive.aprilv2.controller.ProfileFragment"
+    android:name="edu.cnm.deepdive.aprilv2.controller.userprofile.UserProfileFragment"
     android:label="fragment_profile"
     tools:layout="@layout/fragment_profile">
     <action
@@ -40,7 +40,7 @@
   </fragment>
   <fragment
     android:id="@+id/landingPage"
-    android:name="edu.cnm.deepdive.aprilv2.controller.LandingPage"
+    android:name="edu.cnm.deepdive.aprilv2.controller.landingpage.LandingPageFragment"
     android:label="fragment_landing_page"
     tools:layout="@layout/fragment_landing_page">
     <action
@@ -58,22 +58,22 @@
   </fragment>
   <fragment
     android:id="@+id/alertsFragment"
-    android:name="edu.cnm.deepdive.aprilv2.controller.AlertsFragment"
+    android:name="edu.cnm.deepdive.aprilv2.controller.alerts.AlertsFragment"
     android:label="fragment_alerts"
     tools:layout="@layout/fragment_alerts"/>
   <fragment
     android:id="@+id/assessmentFragment"
-    android:name="edu.cnm.deepdive.aprilv2.controller.AssessmentFragment"
+    android:name="edu.cnm.deepdive.aprilv2.controller.assessment.AssessmentFragment"
     android:label="fragment_assessment"
     tools:layout="@layout/fragment_assessment"/>
   <fragment
     android:id="@+id/journalFragment"
-    android:name="edu.cnm.deepdive.aprilv2.controller.JournalFragment"
+    android:name="edu.cnm.deepdive.aprilv2.controller.journal.JournalFragment"
     android:label="fragment_journal"
     tools:layout="@layout/fragment_journal"/>
   <fragment
     android:id="@+id/lessonsFragment"
-    android:name="edu.cnm.deepdive.aprilv2.controller.LessonsFragment"
+    android:name="edu.cnm.deepdive.aprilv2.controller.lessons.LessonsFragment"
     android:label="fragment_lessons"
     tools:layout="@layout/fragment_lessons"/>
 </navigation>

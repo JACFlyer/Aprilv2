@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.aprilv2.controller;
+package edu.cnm.deepdive.aprilv2.controller.lessons;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import edu.cnm.deepdive.aprilv2.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ProfileFragment extends Fragment {
+public class LessonsFragment extends Fragment {
 
 
-  public ProfileFragment() {
+  public LessonsFragment() {
     // Required empty public constructor
   }
 
@@ -24,7 +24,7 @@ public class ProfileFragment extends Fragment {
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     // Inflate the layout for this fragment
-    return inflater.inflate(R.layout.fragment_profile, container, false);
+    return inflater.inflate(R.layout.fragment_lessons, container, false);
   }
 
 }

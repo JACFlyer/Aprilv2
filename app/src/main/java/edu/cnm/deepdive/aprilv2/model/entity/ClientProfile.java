@@ -19,7 +19,7 @@ import java.util.jar.Attributes.Name;
 public class ClientProfile {
 
 
-
+  public static long getClientId;
   @ColumnInfo(name = "client_id")
   @PrimaryKey(autoGenerate = true)
   private long clientId;

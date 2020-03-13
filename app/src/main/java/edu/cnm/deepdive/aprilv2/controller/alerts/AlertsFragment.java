@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.aprilv2.controller;
+package edu.cnm.deepdive.aprilv2.controller.alerts;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import edu.cnm.deepdive.aprilv2.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LandingPage extends Fragment {
+public class AlertsFragment extends Fragment {
 
 
-  public LandingPage() {
+  public AlertsFragment() {
     // Required empty public constructor
   }
 
@@ -24,7 +24,7 @@ public class LandingPage extends Fragment {
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     // Inflate the layout for this fragment
-    return inflater.inflate(R.layout.fragment_landing_page, container, false);
+    return inflater.inflate(R.layout.fragment_alerts, container, false);
   }
 
 }
