@@ -1,6 +1,5 @@
 package edu.cnm.deepdive.aprilv2;
 
-import android.Manifest.permission;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -14,29 +13,42 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import edu.cnm.deepdive.aprilv2.DateTimePickerFragment;
-import edu.cnm.deepdive.aprilv2.DateTimePickerFragment.Mode;
+import edu.cnm.deepdive.aprilv2.controller.permissions.PermissionsFragment;
+import edu.cnm.deepdive.aprilv2.controller.permissions.PermissionsFragment.OnAcknowledgeListener;
+import edu.cnm.deepdive.aprilv2.model.repository.GoogleSignInRepository;
 import edu.cnm.deepdive.aprilv2.viewmodel.MainViewModel;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import com.facebook.stetho.Stetho;
 import io.reactivex.schedulers.Schedulers;
 import edu.cnm.deepdive.aprilv2.service.AprilDatabase;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import edu.cnm.deepdive.aprilv2.R;
+import edu.cnm.deepdive.aprilv2.model.repository.GoogleSignInRepository;
+import edu.cnm.deepdive.aprilv2.viewmodel.MainViewModel;
 
 
-public class MainActivity extends AppCompatActivity {
+
+
+
+public class MainActivity extends AppCompatActivity
+    implements OnAcknowledgeListener {
 
   private static final int EXTERNAL_STORAGE_REQUEST_CODE = 1000;
 
   private MainViewModel viewModel;
   private NavController navController;
   private ProgressBar loading;
+  private Calendar calendar;
   private BottomNavigationView navigator;
   private NavOptions navOptions;
 
@@ -57,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
       loading = findViewById(R.id.loading);
     setupNavigation();
     setupViewModel();
-    checkPermissions(permission.READ_EXTERNAL_STORAGE, permission.WRITE_EXTERNAL_STORAGE);
+    checkPermissions();
   }
 
 @Override
@@ -74,12 +86,16 @@ public class MainActivity extends AppCompatActivity {
     //noinspection SwitchStatementWithTooFewBranches
     switch (item.getItemId()) {
       case R.id.sign_out:
-        AprilDatabase.getInstance().signOut()
+        GoogleSignInRepository.getInstance().signOut()
             .addOnCompleteListener((task) -> {
               Intent intent = new Intent(this, LoginActivity.class);
               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
               startActivity(intent);
             });
+        break;
+      case R.id.settings:
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
         break;
       default:
         handled = super.onOptionsItemSelected(item);
@@ -105,10 +121,15 @@ public class MainActivity extends AppCompatActivity {
     }
   }
 
+  @Override
+  public void onAcknowledge(String[] permissionsToRequest) {
+    ActivityCompat.requestPermissions(this, permissionsToRequest, EXTERNAL_STORAGE_REQUEST_CODE);
+  }
+
+
   public void setProgressVisibility(int visibility) {
     loading.setVisibility(visibility);
   }
-
   public void showToast(String message) {
     setProgressVisibility(View.GONE);
     Toast toast = Toast.makeText(this, message, Toast.LENGTH_LONG);
@@ -119,15 +140,22 @@ public class MainActivity extends AppCompatActivity {
 
   private void setupViewModel() {
     viewModel = new ViewModelProvider(this).get(MainViewModel.class);
-    }
+    viewModel.getAprilStart().observe(this, (aprilStart) -> {
+      navigateTo(R.id.fragment_april_start);
+    });
+    viewModel.getThrowable().observe(this, (throwable) -> {
+      if (throwable != null) {
+        showToast(getString(R.string.error_message, throwable.getMessage()));
+      }
+    });
+    getLifecycle().addObserver(viewModel);
+  }
 
   private void setupNavigation() {
+    navOptions = new NavOptions.Builder()
+        .setPopUpTo(R.id.april_navigation, true)
+        .build();
     navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-    navigator = findViewById(R.id.navigator);
-    navigator.setOnNavigationItemSelectedListener((item) -> {
-      navigateTo(item.getItemId());
-      return true;
-    });
   }
 
 
@@ -155,11 +183,18 @@ public class MainActivity extends AppCompatActivity {
       }
     }
     if (!permissionsToExplain.isEmpty()) {
-      // TODO Explain to user.
-    }
-    if (!permissionsToRequest.isEmpty()) {
-      ActivityCompat.requestPermissions(this, permissionsToRequest.toArray(new String[0]),
-          EXTERNAL_STORAGE_REQUEST_CODE);
+      explainPermissions(
+          permissionsToExplain.toArray(new String[0]), permissionsToRequest.toArray(new String[0]));
+    } else if (!permissionsToRequest.isEmpty()) {
+      onAcknowledge(permissionsToRequest.toArray(new String[0]));
     }
   }
+
+  private void explainPermissions(String[] permissionsToExplain, String[] permissionsToRequest) {
+    PermissionsFragment fragment =
+        PermissionsFragment.createInstance(permissionsToExplain, permissionsToRequest);
+    fragment.show(getSupportFragmentManager(), fragment.getClass().getName());
+  }
 }
+
+

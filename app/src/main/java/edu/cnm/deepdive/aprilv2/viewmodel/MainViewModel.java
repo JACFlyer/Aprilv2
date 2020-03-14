@@ -83,4 +83,12 @@ public class MainViewModel extends AndroidViewModel {
   public void revokePermissions(String permission) {
 
   }
+
+  public void setAprilStart() {
+
+  }
+
+  public LiveData<Object> getAprilStart() {
+    return null;
+  }
 }
