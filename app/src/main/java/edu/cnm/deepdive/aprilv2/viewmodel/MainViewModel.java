@@ -76,7 +76,11 @@ public class MainViewModel extends AndroidViewModel {
   }
 
 
+  public void grantPermission(String permission) {
 
+  }
 
+  public void revokePermissions(String permission) {
 
+  }
 }

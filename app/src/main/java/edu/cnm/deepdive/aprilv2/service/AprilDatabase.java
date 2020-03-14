@@ -52,8 +52,10 @@ import java.util.Date;
     public abstract LaborDao getLaborDao();
     public abstract FetalConditionDao getFetalConditionDao();
 
+  public abstract Object signOut();
 
-    public static class InstanceHolder {
+
+  public static class InstanceHolder {
       private static final AprilDatabase INSTANCE = Room.databaseBuilder(
           context, AprilDatabase.class, DB_NAME)
           .build();

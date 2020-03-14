@@ -22,6 +22,7 @@
 
     <string name="default_description">Default description</string>
     <string name="date_label">Date:</string>
+  <string name="sign_out">sign_out</string>
 
 
-  </resources>
+</resources>
