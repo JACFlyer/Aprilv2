@@ -2,20 +2,13 @@ package edu.cnm.deepdive.aprilv2.controller.journal;
 
 
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
-import edu.cnm.deepdive.aprilv2.MainActivity;
 import edu.cnm.deepdive.aprilv2.R;
-import edu.cnm.deepdive.aprilv2.viewmodel.MainViewModel;
-
-
 
 
 /**

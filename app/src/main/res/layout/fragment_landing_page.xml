@@ -6,6 +6,7 @@
   tools:context=".controller.landingpage.LandingPageFragment">
 
   <TextView
+    android:id="@+id/fragment_landing_page"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:text="@string/text_landing_page"/>

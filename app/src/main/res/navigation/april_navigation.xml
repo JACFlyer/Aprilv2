@@ -3,50 +3,41 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:id="@+id/april_navigation"
-  app:startDestination="@id/aprilStartFragment">
+  app:startDestination="@id/fragment_april_start">
 
   <fragment
-    android:id="@+id/aprilStartFragment"
+    android:id="@+id/fragment_april_start"
     android:name="edu.cnm.deepdive.aprilv2.controller.aprilstart.AprilStartFragment"
-    android:label="fragment_april_start"
+    android:label="@string/start_lable"
     tools:layout="@layout/fragment_april_start">
     <action
       android:id="@+id/action_aprilStart_to_registration"
-      app:destination="@id/registrationFragment"/>
+      app:destination="@id/fragment_registration"/>
     <action
       android:id="@+id/action_aprilStart_to_landingPage"
-      app:destination="@id/landingPageFragment"/>
+      app:destination="@id/fragment_landing_page"/>
   </fragment>
 
 
   <fragment
-    android:id="@+id/registrationFragment"
+    android:id="@+id/fragment_profile"
     android:name="edu.cnm.deepdive.aprilv2.controller.registration.RegistrationFragment"
-    android:label="fragment_registration"
-    tools:layout="@layout/fragment_registration">
-    <action
-      android:id="@+id/action_registration_to_profileFragment"
-      app:destination="@id/userProfileFragment"/>
-
-  </fragment>
-
-
-  <fragment
-    android:id="@+id/userProfileFragment"
-    android:label="fragment_user_profile"
-    android:name="edu.cnm.deepdive.aprilv2.controller.userprofile.UserProfileFragment"
-    tools:layout="@layout/fragment_user_profile">
+    android:label="@string/user_profile_lable">
     <action
       android:id="@+id/action_profileFragment_to_landingPage"
-      app:destination="@id/landingPageFragment"/>
+      app:destination="@id/fragment_landing_page"/>
+
   </fragment>
 
 
+
+
   <fragment
-    android:id="@+id/landingPageFragment"
+    android:id="@+id/fragment_landing_page"
     android:name="edu.cnm.deepdive.aprilv2.controller.landingpage.LandingPageFragment"
-    android:label="fragment_landing_page"
+    android:label="@string/scroll_review_input"
     tools:layout="@layout/fragment_landing_page">
+<!--
     <action
       android:id="@+id/action_landingPage_to_alertsFragment"
       app:destination="@id/alertsFragment"/>
@@ -59,52 +50,46 @@
     <action
       android:id="@+id/action_landingPage_to_lessonsFragment"
       app:destination="@id/lessonsFragment"/>
+-->
     <action
-      android:id="@+id/action_landingPageFragment_to_userProfileFragment"
-      app:destination="@id/userProfileFragment"/>
+      android:id="@+id/action_landingPageFragment_to_profileFragment"
+      app:destination="@id/fragment_profile"/>
   </fragment>
 
 
-  <fragment
-    android:id="@+id/alertsFragment"
-    android:name="edu.cnm.deepdive.aprilv2.controller.alerts.AlertsFragment"
-    android:label="fragment_alerts"
-    tools:layout="@layout/fragment_alerts">
-    <action
-      android:id="@+id/action_alertsFragment_to_landingPageFragment"
-      app:destination="@id/landingPageFragment"/>
-  </fragment>
+  <!--
 
 
-  <fragment
-    android:id="@+id/assessmentFragment"
-    android:name="edu.cnm.deepdive.aprilv2.controller.assessment.AssessmentFragment"
-    android:label="fragment_assessment"
-    tools:layout="@layout/fragment_assessment">
-    <action
-      android:id="@+id/action_assessmentFragment_to_landingPageFragment"
-      app:destination="@id/landingPageFragment"/>
-  </fragment>
+    <fragment
+      android:id="@+id/assessmentFragment"
+      android:name="edu.cnm.deepdive.aprilv2.controller.assessment.AssessmentFragment"
+      android:label="fragment_assessment"
+      tools:layout="@layout/fragment_assessment">
+      <action
+        android:id="@+id/action_assessmentFragment_to_landingPageFragment"
+        app:destination="@id/landing_page_fragment"/>
+    </fragment>
 
 
-  <fragment
-    android:id="@+id/journalFragment"
-    android:name="edu.cnm.deepdive.aprilv2.controller.journal.JournalFragment"
-    android:label="fragment_journal"
-    tools:layout="@layout/fragment_journal">
-    <action
-      android:id="@+id/action_journalFragment_to_landingPageFragment"
-      app:destination="@id/landingPageFragment"/>
-  </fragment>
+    <fragment
+      android:id="@+id/journalFragment"
+      android:name="edu.cnm.deepdive.aprilv2.controller.journal.JournalFragment"
+      android:label="fragment_journal"
+      tools:layout="@layout/fragment_journal">
+      <action
+        android:id="@+id/action_journalFragment_to_landingPageFragment"
+        app:destination="@id/landing_page_fragment"/>
+    </fragment>
 
 
-  <fragment
-    android:id="@+id/lessonsFragment"
-    android:name="edu.cnm.deepdive.aprilv2.controller.lessons.LessonsFragment"
-    android:label="fragment_lessons"
-    tools:layout="@layout/fragment_lessons">
-    <action
-      android:id="@+id/action_lessonsFragment_to_landingPageFragment"
-      app:destination="@id/landingPageFragment"/>
-  </fragment>
+    <fragment
+      android:id="@+id/lessonsFragment"
+      android:name="edu.cnm.deepdive.aprilv2.controller.lessons.LessonsFragment"
+      android:label="fragment_lessons"
+      tools:layout="@layout/fragment_lessons">
+      <action
+        android:id="@+id/action_lessonsFragment_to_landingPageFragment"
+        app:destination="@id/landing_page_fragment"/>
+    </fragment>
+  -->
 </navigation>

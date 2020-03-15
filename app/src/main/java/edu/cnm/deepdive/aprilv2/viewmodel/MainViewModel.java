@@ -3,6 +3,7 @@ package edu.cnm.deepdive.aprilv2.viewmodel;
 import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import io.reactivex.schedulers.Schedulers;
@@ -31,7 +32,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class MainViewModel extends AndroidViewModel {
+public class MainViewModel extends AndroidViewModel implements LifecycleObserver {
   private MutableLiveData<Throwable> throwable;
   private AprilDatabase database;
 

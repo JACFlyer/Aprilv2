@@ -3,10 +3,11 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".controller.userprofile.UserProfileFragment">
+  tools:context=".controller.registration.RegistrationFragment">
 
   <!-- TODO: Update blank fragment layout -->
   <TextView
+    android:id="@+id/fragment_profile"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:text="text_profile"/>

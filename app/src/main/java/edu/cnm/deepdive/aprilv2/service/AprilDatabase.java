@@ -1,12 +1,11 @@
 package edu.cnm.deepdive.aprilv2.service;
 
-import android.app.Application;
+import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverter;
 import androidx.room.TypeConverters;
-import edu.cnm.deepdive.aprilv2.MainActivity;
 import edu.cnm.deepdive.aprilv2.model.dao.AssessmentDao;
 import edu.cnm.deepdive.aprilv2.model.dao.ClientProfileDao;
 import edu.cnm.deepdive.aprilv2.model.dao.FetalConditionDao;
@@ -34,8 +33,8 @@ import java.util.Date;
     private static final String DB_NAME = "client_db";
 
     /*  A private static field of the android.app.Application type settable to a public static setter. */
-    private static MainActivity context;
-    public static void setContext(MainActivity context) {
+    private static Context context;
+    public static void setContext(Context context) {
       AprilDatabase.context = context;
     }
 

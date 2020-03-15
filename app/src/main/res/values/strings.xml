@@ -23,6 +23,9 @@
     <string name="default_description">Default description</string>
     <string name="date_label">Date:</string>
   <string name="sign_out">sign_out</string>
+  <string name="start_lable">Welcome</string>
+  <string name="user_profile_lable">User Profile</string>
+  <string name="scroll_review_input">Scroll Review Input</string>
 
 
 </resources>
