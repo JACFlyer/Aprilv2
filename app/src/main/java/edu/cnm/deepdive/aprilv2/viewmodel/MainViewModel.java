@@ -7,14 +7,6 @@ import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import io.reactivex.schedulers.Schedulers;
-import java.text.ParseException;
-import java.util.Date;
-import android.annotation.SuppressLint;
-import android.util.Log;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import edu.cnm.deepdive.aprilv2.BuildConfig;
-import edu.cnm.deepdive.aprilv2.model.dao.ClientProfileDao;
 import edu.cnm.deepdive.aprilv2.model.dao.AssessmentDao;
 import edu.cnm.deepdive.aprilv2.model.dao.FetalConditionDao;
 import edu.cnm.deepdive.aprilv2.model.dao.LaborDao;
@@ -23,13 +15,6 @@ import edu.cnm.deepdive.aprilv2.model.entity.Assessment;
 import edu.cnm.deepdive.aprilv2.model.entity.FetalCondition;
 import edu.cnm.deepdive.aprilv2.model.entity.Labor;
 import edu.cnm.deepdive.aprilv2.service.AprilDatabase;
-import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class MainViewModel extends AndroidViewModel implements LifecycleObserver {
@@ -76,17 +61,7 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
         .subscribe(/*TODO Handle error result */);
   }
 
-
-  public void grantPermission(String permission) {
-
-  }
-
-  public void revokePermissions(String permission) {
-
-  }
-
   public void setAprilStart() {
-
   }
 
   public LiveData<Object> getAprilStart() {
