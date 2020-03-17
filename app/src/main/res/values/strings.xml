@@ -26,6 +26,9 @@
   <string name="start_lable">Welcome</string>
   <string name="user_profile_lable">User Profile</string>
   <string name="scroll_review_input">Scroll Review Input</string>
+  <string name="goto_profile">GoTo Profile</string>
+  <string name="action">Action</string>
+  <string name="profile">Profile</string>
 
 
 </resources>

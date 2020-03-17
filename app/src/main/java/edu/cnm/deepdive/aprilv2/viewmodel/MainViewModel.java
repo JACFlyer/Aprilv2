@@ -32,34 +32,36 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
     return throwable;
   }
 
-  private void insertAssessment(ClientProfile clientProfile) {
-    AssessmentDao assessmentDao = database.getAssessmentDao();
-    Assessment assessment = new Assessment();
-    assessment.setClientId(ClientProfile.getClientId);
-    assessmentDao.insert(assessment)
-        .subscribeOn(Schedulers.io())
-        .subscribe(/*TODO Handle error result */);
-  }
 
 
-  private void insertFetalConditionDao(Assessment assessment) {
-    FetalConditionDao fetalConditionDao = database.getFetalConditionDao();
-    FetalCondition fetalCondition = new FetalCondition();
-    fetalCondition.setAssessmentId(Assessment.getAssessmentId);
-    fetalConditionDao.insert(fetalCondition)
-        .subscribeOn(Schedulers.io())
-        .subscribe(/*TODO Handle error result */);
-  }
+//  private void insertAssessment(ClientProfile clientProfile) {
+//    AssessmentDao assessmentDao = database.getAssessmentDao();
+//    Assessment assessment = new Assessment();
+//    assessment.setClientId(ClientProfile.getClientId);
+//    assessmentDao.insert(assessment)
+//        .subscribeOn(Schedulers.io())
+//        .subscribe(/*TODO Handle error result */);
+//  }
 
 
-  private void insertLaborDao(Assessment assessment) {
-    LaborDao laborDao = database.getLaborDao();
-    Labor labor = new Labor();
-    labor.setAssessmentId(Assessment.getAssessmentId);
-    laborDao.insert(labor)
-        .subscribeOn(Schedulers.io())
-        .subscribe(/*TODO Handle error result */);
-  }
+//  private void insertFetalConditionDao(Assessment assessment) {
+//    FetalConditionDao fetalConditionDao = database.getFetalConditionDao();
+//    FetalCondition fetalCondition = new FetalCondition();
+//    fetalCondition.setAssessmentId(Assessment.getAssessmentId);
+//    fetalConditionDao.insert(fetalCondition)
+//        .subscribeOn(Schedulers.io())
+//        .subscribe(/*TODO Handle error result */);
+//  }
+
+
+//  private void insertLaborDao(Assessment assessment) {
+//    LaborDao laborDao = database.getLaborDao();
+//    Labor labor = new Labor();
+//    labor.setAssessmentId(Assessment.getAssessmentId);
+//    laborDao.insert(labor)
+//        .subscribeOn(Schedulers.io())
+//        .subscribe(/*TODO Handle error result */);
+//  }
 
   public void setAprilStart() {
   }

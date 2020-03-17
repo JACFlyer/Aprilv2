@@ -14,6 +14,8 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import edu.cnm.deepdive.aprilv2.viewmodel.MainViewModel;
 import java.util.Calendar;
@@ -23,7 +25,7 @@ import edu.cnm.deepdive.aprilv2.R;
 
 public class MainActivity extends AppCompatActivity {
 
-  private static final int EXTERNAL_STORAGE_REQUEST_CODE = 1000;
+  // private static final int EXTERNAL_STORAGE_REQUEST_CODE = 1000;
 
   private MainViewModel viewModel;
   private NavController navController;
@@ -32,58 +34,39 @@ public class MainActivity extends AppCompatActivity {
   private BottomNavigationView navigator;
   private NavOptions navOptions;
 
-    public MainActivity(NavOptions navOptions,
-        AprilDatabase googleSignInRepository) {
-        this.navOptions = navOptions;
-    }
+  public MainActivity(NavOptions navOptions,
+      AprilDatabase googleSignInRepository) {
+    this.navOptions = navOptions;
+  }
 
-    @Override
+  @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-      setContentView(R.layout.activity_main);
-
-
-      loading = findViewById(R.id.loading);
+    setContentView(R.layout.activity_main);
+    loading = findViewById(R.id.loading);
     setupNavigation();
     setupViewModel();
   }
 
-@Override
-  public boolean onCreateOptionsMenu(Menu menu) {
-    super.onCreateOptionsMenu(menu);
-    getMenuInflater().inflate(R.menu.main_options, menu);
-    return true;
-  }
 
-
-  @Override
-  public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-    boolean handled = true;
-    //noinspection SwitchStatementWithTooFewBranches
-    switch (item.getItemId()) {
-//      case R.id.sign_out:
-//        GoogleSignInRepository.getInstance().signOut()
-//            .addOnCompleteListener((task) -> {
-//              Intent intent = new Intent(this, LoginActivity.class);
-//              intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-//              startActivity(intent);
-//            });
-//        break;
-//      case R.id.settings:
-  //      Intent intent = new Intent(this, SettingsActivity.class);
-    //    startActivity(intent);
-//        break;
-      default:
-        handled = super.onOptionsItemSelected(item);
-    }
-    return handled;
-  }
-
-
-
+  /**
+   * @Override public boolean onCreateOptionsMenu(Menu menu) { super.onCreateOptionsMenu(menu);
+   * getMenuInflater().inflate(R.menu.main_options, menu); return true; }
+   * @Override public boolean onOptionsItemSelected(@NonNull MenuItem item) { boolean handled =
+   * true; //noinspection SwitchStatementWithTooFewBranches switch (item.getItemId()) { //      case
+   * R.id.sign_out: //        GoogleSignInRepository.getInstance().signOut() //
+   * .addOnCompleteListener((task) -> { //              Intent intent = new Intent(this,
+   * LoginActivity.class); //              intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK |
+   * Intent.FLAG_ACTIVITY_NEW_TASK); //              startActivity(intent); //            }); //
+   *    break; //      case R.id.settings: //      Intent intent = new Intent(this,
+   * SettingsActivity.class); //    startActivity(intent); //        break; default: handled =
+   * super.onOptionsItemSelected(item); } return handled; }
+   **/
   public void setProgressVisibility(int visibility) {
     loading.setVisibility(visibility);
   }
+
+
   public void showToast(String message) {
     setProgressVisibility(View.GONE);
     Toast toast = Toast.makeText(this, message, Toast.LENGTH_LONG);
@@ -109,7 +92,21 @@ public class MainActivity extends AppCompatActivity {
     navOptions = new NavOptions.Builder()
         .setPopUpTo(R.id.april_navigation, true)
         .build();
+    AppBarConfiguration appBarConfiguration =
+        new AppBarConfiguration.Builder(R.id.fragment_profile, R.id.fragment_landing_page)
+            .build();
     navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+    NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+    navigator = findViewById(R.id.navigator);
+    navigator.setOnNavigationItemSelectedListener((item) -> {
+      navigateTo(item.getItemId());
+      return true;
+    });
+
+    navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+    // nav_host_fragment = activity_main id
+
+
   }
 
 
