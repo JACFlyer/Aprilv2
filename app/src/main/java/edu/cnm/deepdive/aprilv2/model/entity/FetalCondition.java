@@ -24,7 +24,7 @@ public class FetalCondition {
   private long id;
 
 
-  @ColumnInfo(name = "assessment_id")
+  @ColumnInfo(name = "assessment_id", index = true)
   private long assessmentId;
 
 

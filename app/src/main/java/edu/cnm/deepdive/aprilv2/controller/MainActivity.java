@@ -61,18 +61,18 @@ public class MainActivity extends AppCompatActivity {
     boolean handled = true;
     //noinspection SwitchStatementWithTooFewBranches
     switch (item.getItemId()) {
-      case R.id.sign_out:
+//      case R.id.sign_out:
 //        GoogleSignInRepository.getInstance().signOut()
 //            .addOnCompleteListener((task) -> {
 //              Intent intent = new Intent(this, LoginActivity.class);
 //              intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 //              startActivity(intent);
 //            });
-        break;
-      case R.id.settings:
-        Intent intent = new Intent(this, SettingsActivity.class);
-        startActivity(intent);
-        break;
+//        break;
+//      case R.id.settings:
+  //      Intent intent = new Intent(this, SettingsActivity.class);
+    //    startActivity(intent);
+//        break;
       default:
         handled = super.onOptionsItemSelected(item);
     }

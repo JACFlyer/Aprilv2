@@ -51,7 +51,6 @@ import java.util.Date;
     public abstract LaborDao getLaborDao();
     public abstract FetalConditionDao getFetalConditionDao();
 
-  public abstract Object signOut();
 
 
   public static class InstanceHolder {

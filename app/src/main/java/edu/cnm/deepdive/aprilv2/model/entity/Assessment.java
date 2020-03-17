@@ -32,7 +32,7 @@ public class Assessment {
   private long id;
 
 
-  @ColumnInfo(name = "client_id")
+  @ColumnInfo(name = "client_id", index = true)
   private long clientId;
 
 

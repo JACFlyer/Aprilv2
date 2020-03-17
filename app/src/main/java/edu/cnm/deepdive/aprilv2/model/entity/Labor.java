@@ -25,7 +25,7 @@ public class Labor {
   private long laborId;
 
 
-  @ColumnInfo(name = "assessment_id")
+  @ColumnInfo(name = "assessment_id", index = true)
   private long assessmentId;
 
 

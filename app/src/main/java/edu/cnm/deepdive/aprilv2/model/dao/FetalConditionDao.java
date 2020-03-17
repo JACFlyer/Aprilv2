@@ -5,7 +5,6 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
-import edu.cnm.deepdive.aprilv2.model.entity.Assessment;
 import edu.cnm.deepdive.aprilv2.model.entity.ClientProfile;
 import edu.cnm.deepdive.aprilv2.model.entity.FetalCondition;
 import io.reactivex.Single;
@@ -28,26 +27,18 @@ public interface FetalConditionDao {
 
 
   /** Establishing Read CRUD-Operation **/
-  @Query("SELECT * FROM FetalCondition ORDER BY fetal_id")
-  List<FetalCondition> select();
-
-
-//  @Query("SELECT * FROM FetalCondition WHERE fetal_id = :id")
-//  Single<ClientProfile> select(long id);
-
-
 
   /** Establishing Update CRUD-Operation **/
-//  @Update
-//  Single<Long> update(FetalCondition fetalCondition);
+ /** @Update
+  Single<Long> update(FetalCondition fetalCondition);
 
-//  @Update
-//  Single<List<Long>> update(Collection<FetalCondition> fetalConditions);
+  @Update
+  Single<List<Long>> update(Collection<FetalCondition> fetalConditions);
 
-//  @Update
-//  Single<List<Long>> update(FetalCondition... fetalConditions);
+  @Update
+  Single<List<Long>> update(FetalCondition... fetalConditions);
 
-
+**/
 
   /** Establishing Delete CRUD-Operation **/
   @Delete
