@@ -1,14 +1,14 @@
 # Overview
 _Applied Pregnancy Informatics_
 
-The onset of labor can be difficult to determine for a mom to be.  Knowing the right time to go to
+The onset of contraction can be difficult to determine for a mom to be.  Knowing the right time to go to
 the hospital can make the difference between having a successful self-designed birth plan
-and being admitted before planned.  At times, an ER labor and delivery provider might simply send
+and being admitted before planned.  At times, an ER contraction and delivery provider might simply send
 mom home, frustrated, and with instructions on when to return.  This is often a waste of time and
 resources for both the hospital and the client.
 
 It is the intention of this project to develop an evidenced based application that provides
-accurate and safe coaching to the client regarding her stage of labor.  In so doing,
+accurate and safe coaching to the client regarding her stage of contraction.  In so doing,
 the application will promote the wellness of both the mother and child.
 
 Using this product involves downloading the app to ones smart device (cell phone or tablet),
@@ -21,7 +21,7 @@ have access to the client's app profile for monitoring and response purposes.
 
 
 # Intended Users
-* Pregnant women in antepartum period, and near early labor phase  
+* Pregnant women in antepartum period, and near early contraction phase  
 * Client spouses and support team members  
 * OB/GYN and CNM medical providers  
 * Community pregnancy support service providers  

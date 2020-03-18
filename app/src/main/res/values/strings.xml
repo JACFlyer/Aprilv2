@@ -29,6 +29,7 @@
   <string name="goto_profile">GoTo Profile</string>
   <string name="action">Action</string>
   <string name="profile">Profile</string>
+  <string name="home">Home</string>
 
 
 </resources>

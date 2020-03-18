@@ -34,10 +34,6 @@ public class MainActivity extends AppCompatActivity {
   private BottomNavigationView navigator;
   private NavOptions navOptions;
 
-  public MainActivity(NavOptions navOptions,
-      AprilDatabase googleSignInRepository) {
-    this.navOptions = navOptions;
-  }
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -77,9 +73,6 @@ public class MainActivity extends AppCompatActivity {
 
   private void setupViewModel() {
     viewModel = new ViewModelProvider(this).get(MainViewModel.class);
-    viewModel.getAprilStart().observe(this, (aprilStart) -> {
-      navigateTo(R.id.fragment_april_start);
-    });
     viewModel.getThrowable().observe(this, (throwable) -> {
       if (throwable != null) {
         showToast(getString(R.string.error_message, throwable.getMessage()));
@@ -89,35 +82,18 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void setupNavigation() {
-    navOptions = new NavOptions.Builder()
-        .setPopUpTo(R.id.april_navigation, true)
-        .build();
     AppBarConfiguration appBarConfiguration =
-        new AppBarConfiguration.Builder(R.id.fragment_profile, R.id.fragment_landing_page)
+        new AppBarConfiguration.Builder(R.id.fragment_april_start, R.id.fragment_landing_page, R.id.fragment_profile)
             .build();
     navController = Navigation.findNavController(this, R.id.nav_host_fragment);
     NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
     navigator = findViewById(R.id.navigator);
-    navigator.setOnNavigationItemSelectedListener((item) -> {
-      navigateTo(item.getItemId());
-      return true;
-    });
+    NavigationUI.setupWithNavController(navigator, navController);
 
-    navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-    // nav_host_fragment = activity_main id
 
 
   }
 
-
-  private void navigateTo(int itemId) {
-    if (navController.getCurrentDestination().getId() != itemId) {
-      navController.navigate(itemId, null, navOptions);
-      if (navigator.getSelectedItemId() != itemId) {
-        navigator.setSelectedItemId(itemId);
-      }
-    }
-  }
 }
 
 

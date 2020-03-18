@@ -12,65 +12,16 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Date;
 
 
-@Entity(
-    foreignKeys = @ForeignKey(
-        entity = ClientProfile.class,
-        parentColumns = "client_id",
-        childColumns = "client_id",
-        onDelete = ForeignKey.CASCADE
-    ),
-
-    indices = @Index(value = "assessment_id", unique = true)
-
-)
-
-public class Assessment {
-
-  public static long getAssessmentId;
-  @ColumnInfo(name = "assessment_id")
-  @PrimaryKey(autoGenerate = true)
-  private long id;
-
-
-  @ColumnInfo(name = "client_id", index = true)
-  private long clientId;
-
-
-  @ColumnInfo(name = "assessment_type")
-  public AssessmentType assessmentType;
-
-
+public abstract class Assessment implements Comparable<Assessment> {
 
   @NonNull
-  private Date timestamp = new Date();
+  @ColumnInfo(index = true)
+  protected Date timestamp = new Date();
 
+  public abstract long getId();
 
+  public abstract void setId(long id);
 
-
-  public long getId() {
-    return id;
-  }
-
-  public void setId(long id) {
-    this.id = id;
-  }
-
-  public long getClientId() {
-    return clientId;
-  }
-
-  public void setClientId(long clientId) {
-    this.clientId = clientId;
-  }
-
-  public AssessmentType getAssessmentType() {
-    return assessmentType;
-  }
-
-  public void setAssessmentType(
-      AssessmentType assessmentType) {
-    this.assessmentType = assessmentType;
-  }
 
   public Date getTimestamp() {
     return timestamp;
@@ -80,25 +31,10 @@ public class Assessment {
     this.timestamp = timestamp;
   }
 
-  public void setAssessmentId(long assessmentId) {
-
+  @Override
+  public int compareTo(Assessment other) {
+    return -timestamp.compareTo(other.timestamp);
   }
-
-  public enum AssessmentType {
-    LABOR,
-    FETAL_CONDITION;
-
-    @TypeConverter
-    public static AssessmentType fromInteger(Integer value) {
-      return (value != null) ? AssessmentType.values()[value] : null;
-    }
-
-    @TypeConverter
-    public static Integer toInteger (AssessmentType value) {
-      return (value != null) ? value.ordinal() : null;
-    }
-  }
-
 }
 
 

@@ -4,11 +4,14 @@
   <item
     android:id="@+id/options_april_sign_out"
     android:title="@string/sign_out"
-    app:showAsAction="never"/>
+    app:showAsAction="never"
+    android:visible="false"/>
 
   <item
     android:id="@+id/options_april_information"
     android:title="@string/information"
     app:showAsAction="never"/>
   
+
+
 </menu>

@@ -6,7 +6,6 @@
   android:layout_height="match_parent"
   tools:context=".controller.aprilstart.AprilStartFragment">
 
-  <!-- TODO: Update blank fragment layout -->
   <TextView
     android:id="@+id/fragment_april_start"
     android:layout_width="match_parent"

@@ -2,13 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
   <item
-    android:id="@+id/navigation_to_profile"
+    android:id="@+id/fragment_april_start"
+    android:tooltipText="Action"
+    android:title="@string/home"/>
+
+
+  <item
+    android:id="@+id/fragment_landing_page"
+    android:tooltipText="Action"
+    android:title="@string/action"/>
+
+  <item
+    android:id="@+id/fragment_profile"
     android:tooltipText="Profile"
     android:title="@string/profile"/>
 
-  <item
-    android:id="@+id/navigation_to_landing_page"
-    android:tooltipText="Action"
-    android:title="@string/action"/>
 
 </menu>

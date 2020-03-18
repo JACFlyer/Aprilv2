@@ -11,9 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import edu.cnm.deepdive.aprilv2.R;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class JournalFragment extends Fragment {
   private RecyclerView journalList;
 

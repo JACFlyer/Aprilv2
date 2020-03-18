@@ -21,7 +21,7 @@
 
   <fragment
     android:id="@+id/fragment_profile"
-    android:name="edu.cnm.deepdive.aprilv2.controller.registration.RegistrationFragment"
+    android:name="edu.cnm.deepdive.aprilv2.controller.profile.ProfileFragment"
     android:label="@string/user_profile_lable">
     <action
       android:id="@+id/action_profileFragment_to_landingPage"
@@ -34,7 +34,7 @@
 
   <fragment
     android:id="@+id/fragment_landing_page"
-    android:name="edu.cnm.deepdive.aprilv2.controller.landingpage.LandingPageFragment"
+    android:name="edu.cnm.deepdive.aprilv2.controller.assessment.AssessmentFragment"
     android:label="@string/scroll_review_input"
     tools:layout="@layout/fragment_landing_page">
 <!--
