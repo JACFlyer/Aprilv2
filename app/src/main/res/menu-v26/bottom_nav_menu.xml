@@ -7,7 +7,7 @@
     android:title="@string/profile"/>
 
   <item
-    android:id="@+id/navigation_to_landing_page"
+    android:id="@+id/navigation_to_action_page"
     android:tooltipText="Action"
     android:title="@string/action"/>
 

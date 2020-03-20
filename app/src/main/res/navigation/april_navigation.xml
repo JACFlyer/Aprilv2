@@ -10,9 +10,7 @@
     android:name="edu.cnm.deepdive.aprilv2.controller.aprilstart.AprilStartFragment"
     android:label="@string/start_lable"
     tools:layout="@layout/fragment_april_start">
-    <action
-      android:id="@+id/action_aprilStart_to_registration"
-      app:destination="@id/fragment_registration"/>
+
     <action
       android:id="@+id/action_aprilStart_to_landingPage"
       app:destination="@id/fragment_landing_page"/>
@@ -30,66 +28,15 @@
   </fragment>
 
 
-
-
   <fragment
     android:id="@+id/fragment_landing_page"
     android:name="edu.cnm.deepdive.aprilv2.controller.assessment.AssessmentFragment"
     android:label="@string/scroll_review_input"
-    tools:layout="@layout/fragment_landing_page">
-<!--
-    <action
-      android:id="@+id/action_landingPage_to_alertsFragment"
-      app:destination="@id/alertsFragment"/>
-    <action
-      android:id="@+id/action_landingPage_to_assessmentFragment"
-      app:destination="@id/assessmentFragment"/>
-    <action
-      android:id="@+id/action_landingPage_to_journalFragment"
-      app:destination="@id/journalFragment"/>
-    <action
-      android:id="@+id/action_landingPage_to_lessonsFragment"
-      app:destination="@id/lessonsFragment"/>
--->
+    tools:layout="@layout/fragment_action_page">
     <action
       android:id="@+id/action_landingPageFragment_to_profileFragment"
       app:destination="@id/fragment_profile"/>
   </fragment>
 
 
-  <!--
-
-
-    <fragment
-      android:id="@+id/assessmentFragment"
-      android:name="edu.cnm.deepdive.aprilv2.controller.assessment.AssessmentFragment"
-      android:label="fragment_assessment"
-      tools:layout="@layout/fragment_assessment">
-      <action
-        android:id="@+id/action_assessmentFragment_to_landingPageFragment"
-        app:destination="@id/landing_page_fragment"/>
-    </fragment>
-
-
-    <fragment
-      android:id="@+id/journalFragment"
-      android:name="edu.cnm.deepdive.aprilv2.controller.journal.JournalFragment"
-      android:label="fragment_journal"
-      tools:layout="@layout/fragment_journal">
-      <action
-        android:id="@+id/action_journalFragment_to_landingPageFragment"
-        app:destination="@id/landing_page_fragment"/>
-    </fragment>
-
-
-    <fragment
-      android:id="@+id/lessonsFragment"
-      android:name="edu.cnm.deepdive.aprilv2.controller.lessons.LessonsFragment"
-      android:label="fragment_lessons"
-      tools:layout="@layout/fragment_lessons">
-      <action
-        android:id="@+id/action_lessonsFragment_to_landingPageFragment"
-        app:destination="@id/landing_page_fragment"/>
-    </fragment>
-  -->
 </navigation>

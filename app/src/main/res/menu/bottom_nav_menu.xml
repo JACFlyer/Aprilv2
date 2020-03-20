@@ -3,7 +3,7 @@
 
   <item
     android:id="@+id/fragment_april_start"
-    android:tooltipText="Action"
+    android:tooltipText="Landing Page"
     android:title="@string/home"/>
 
 

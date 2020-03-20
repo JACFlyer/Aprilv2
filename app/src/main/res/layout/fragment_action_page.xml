@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".controller.landingpage.LandingPageFragment">
+    tools:context=".controller.actionpage.ActionPageFragment">
 
     <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/activities_list"

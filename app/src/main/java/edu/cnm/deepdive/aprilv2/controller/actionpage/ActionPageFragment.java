@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.aprilv2.controller.landingpage;
+package edu.cnm.deepdive.aprilv2.controller.actionpage;
 
 
 import android.os.Bundle;
@@ -17,7 +17,7 @@ import edu.cnm.deepdive.aprilv2.viewmodel.MainViewModel;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LandingPageFragment extends Fragment {
+public class ActionPageFragment extends Fragment {
 
   private RecyclerView activitiesList;
   private MainViewModel viewModel;
@@ -30,7 +30,7 @@ public class LandingPageFragment extends Fragment {
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     // Inflate the layout for this fragment
-    View root = inflater.inflate(R.layout.fragment_landing_page, container, false);
+    View root = inflater.inflate(R.layout.fragment_action_page, container, false);
     activitiesList = root.findViewById(R.id.activities_list);
     return root;
   }
