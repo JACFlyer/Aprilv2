@@ -61,8 +61,6 @@ import java.util.Date;
       public static Date fromLong(Long value) {
         return (value != null) ? new Date(value) : null;
       }
-
-
     }
 
 }

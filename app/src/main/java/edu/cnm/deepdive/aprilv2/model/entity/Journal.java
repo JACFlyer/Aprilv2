@@ -10,7 +10,7 @@ public class Journal extends Assessment {
   @ColumnInfo(name = "journal_id")
   @PrimaryKey(autoGenerate = true)
   private long id;
-  private String notes;
+  private String note;
 
   @Override
   public long getId() {
@@ -22,11 +22,11 @@ public class Journal extends Assessment {
     this.id = id;
   }
 
-  public String getNotes() {
-    return notes;
+  public String getNote() {
+    return note;
   }
 
-  public void setNotes(String notes) {
-    this.notes = notes;
+  public void setNote(String note) {
+    this.note = note;
   }
 }

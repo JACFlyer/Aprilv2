@@ -14,9 +14,6 @@ import io.reactivex.schedulers.Schedulers;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Repository class declared
- **/
 public class AssessmentRepository {
 
   private static final int NETWORK_THREAD_COUNT = 10;
@@ -24,6 +21,7 @@ public class AssessmentRepository {
   private final AprilDatabase database;
 
   private final Context context;
+
 
   /**
    * Constructor for repository
@@ -35,9 +33,9 @@ public class AssessmentRepository {
     database = AprilDatabase.getInstance();
   }
 
-  public Completable saveJournal(Journal journal) {
-    //  TODO Save or Update
 
+/** Save Methods **/
+  public Completable saveJournal(Journal journal) {
     return Completable.fromSingle(
         database.getJournalDao().insert(journal)
             .subscribeOn(Schedulers.io())
@@ -45,8 +43,6 @@ public class AssessmentRepository {
   }
 
   public Completable saveContraction(Contraction contraction) {
-    //  TODO Save or Update
-
     return Completable.fromSingle(
         database.getContractionDao().insert(contraction)
             .subscribeOn(Schedulers.io())
@@ -54,19 +50,21 @@ public class AssessmentRepository {
   }
 
   public Completable saveFetalHeartRate(FetalHeartRate fetalheartrate) {
-    //  TODO Save or Update
     return Completable.fromSingle(
         database.getFetalHeartRateDao().insert(fetalheartrate)
             .subscribeOn(Schedulers.io())
     );
   }
 
+
+/** getAll Method **/
   public Flowable<List<Assessment>> getAll() {
     return database.getContractionDao().select()
         .subscribeOn(Schedulers.io())
         .map((contractions) -> (List<Assessment>) new ArrayList<Assessment>(contractions))
+
         .concatWith(
-            database.getFetalHeartRateDao().select().map((fhrs) -> new ArrayList<Assessment>(fhrs))
+            database.getFetalHeartRateDao().select().map((fetalHeartRates) -> new ArrayList<Assessment>(fetalHeartRates))
         )
         .concatWith(
             database.getJournalDao().select().map((journals) -> new ArrayList<Assessment>(journals))
@@ -74,5 +72,28 @@ public class AssessmentRepository {
         .sorted();
   }
 
-  //  TODO Implement Remove methods.
+
+/** Remove Methods **/
+public Completable remove(Journal journal) {
+    return Completable.fromSingle(
+        database.getJournalDao().delete(journal)
+            .subscribeOn(Schedulers.io())
+    );
+  }
+
+  public Completable remove(FetalHeartRate fetalHeartRate) {
+    return Completable.fromSingle(
+        database.getFetalHeartRateDao().delete(fetalHeartRate)
+            .subscribeOn(Schedulers.io())
+    );
+  }
+
+  public Completable remove(Contraction contraction) {
+    return Completable.fromSingle(
+        database.getContractionDao().delete(contraction)
+            .subscribeOn(Schedulers.io())
+    );
+  }
+
+
 }

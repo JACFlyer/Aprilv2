@@ -14,7 +14,6 @@ import java.util.List;
 @Dao
 public interface ContractionDao {
 
-  /** Establishing Create CRUD-Operation **/
   @Insert
   Single<Long> insert(Contraction contraction);
 
@@ -34,6 +33,8 @@ public interface ContractionDao {
 
   @Delete
   Single<Integer> delete(Contraction... contractions);
+
+
 
   @Query("SELECT * FROM Contraction ORDER BY timestamp DESC")
   Single<List<Contraction>> select();

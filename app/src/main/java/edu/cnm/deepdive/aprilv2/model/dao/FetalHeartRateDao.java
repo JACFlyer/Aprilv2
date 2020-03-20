@@ -14,7 +14,6 @@ import java.util.List;
 @Dao
 public interface FetalHeartRateDao {
 
-  /** Establishing Create CRUD-Operation **/
   @Insert
   Single<Long> insert(FetalHeartRate fetalHeartRate);
 
@@ -26,7 +25,6 @@ public interface FetalHeartRateDao {
 
 
 
-  /** Establishing Delete CRUD-Operation **/
   @Delete
   Single<Integer> delete(FetalHeartRate fetalHeartRate);
 
@@ -35,6 +33,8 @@ public interface FetalHeartRateDao {
 
   @Delete
   Single<Integer> delete(FetalHeartRate... fetalHeartRates);
+
+
 
   @Query("SELECT * FROM FetalHeartRate ORDER BY timestamp DESC")
   Single<List<FetalHeartRate>> select();

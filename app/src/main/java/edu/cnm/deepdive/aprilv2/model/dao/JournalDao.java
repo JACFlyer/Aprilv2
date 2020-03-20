@@ -13,27 +13,25 @@ import java.util.List;
 public interface JournalDao {
 
 
-     /** Establishing Create CRUD-Operation **/
     @Insert
-    Single<Long> insert(Journal note);
-
-    @Insert
-    Single<List<Long>> insert(Collection<Journal> note);
+    Single<Long> insert(Journal journal);
 
     @Insert
-    Single<List<Long>> insert(Journal... note);
+    Single<List<Long>> insert(Collection<Journal> journals);
+
+    @Insert
+    Single<List<Long>> insert(Journal... journals);
 
 
-
-    /** Establishing Delete CRUD-Operation **/
-    @Delete
-    Single<Integer> delete(Journal note);
-
-    @Delete
-    Single<Integer> delete(Collection<Journal> notes);
 
     @Delete
-    Single<Integer> delete(Journal... notes);
+    Single<Integer> delete(Journal journal);
+
+    @Delete
+    Single<Integer> delete(Collection<Journal> journals);
+
+    @Delete
+    Single<Integer> delete(Journal... journals);
 
 
 
