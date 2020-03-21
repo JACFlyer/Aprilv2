@@ -30,7 +30,7 @@
 
   <fragment
     android:id="@+id/fragment_landing_page"
-    android:name="edu.cnm.deepdive.aprilv2.controller.assessment.AssessmentFragment"
+    android:name="edu.cnm.deepdive.aprilv2.controller.actionpage.ActionPageFragment"
     android:label="@string/scroll_review_input"
     tools:layout="@layout/fragment_action_page">
     <action

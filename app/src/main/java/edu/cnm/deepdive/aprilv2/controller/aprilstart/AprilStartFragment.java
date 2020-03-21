@@ -29,7 +29,7 @@ public class AprilStartFragment extends Fragment {
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     View layout = inflater.inflate(R.layout.fragment_april_start, container, false);
-    aprilStart = layout.findViewById(R.id.journal_subject);
+    aprilStart = layout.findViewById(R.id.journal_entry_note);
     return layout;
   }
 

@@ -23,7 +23,7 @@ public class JournalFragment extends Fragment {
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     View layout = inflater.inflate(R.layout.fragment_journal, container, false);
-    journalList = layout.findViewById(R.id.journal_subject);
+    journalList = layout.findViewById(R.id.journal_entry_note);
     return layout;
   }
 

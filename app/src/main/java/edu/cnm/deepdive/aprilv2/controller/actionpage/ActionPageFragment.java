@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 import edu.cnm.deepdive.aprilv2.R;
+import edu.cnm.deepdive.aprilv2.view.AssessmentRecyclerAdapter;
 import edu.cnm.deepdive.aprilv2.viewmodel.MainViewModel;
 
 /**
@@ -40,6 +41,13 @@ public class ActionPageFragment extends Fragment {
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
     viewModel = new ViewModelProvider(this).get(MainViewModel.class);
+    viewModel.getAssessments().observe(getViewLifecycleOwner(), (assessments) -> {
+      //  TODO Define a listener to handle clicks or long presses.
+
+      AssessmentRecyclerAdapter adapter = new AssessmentRecyclerAdapter(getContext(), assessments);
+      activitiesList.setAdapter(adapter);
+    });
+    viewModel.refresh();
   }
 }
 

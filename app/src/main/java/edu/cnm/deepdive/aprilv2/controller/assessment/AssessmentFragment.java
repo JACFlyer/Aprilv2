@@ -15,9 +15,6 @@ import edu.cnm.deepdive.aprilv2.R;
 public class AssessmentFragment extends Fragment {
 
 
-  public AssessmentFragment() {
-    // Required empty public constructor
-  }
 
 
   @Override

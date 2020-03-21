@@ -2,33 +2,21 @@
   <string name="app_name">April</string>
 
   <string name="hello_blank_fragment">Hello blank fragment</string>
-  <string name="text_alert">text_alert</string>
-  <string name="text_april_start">text_april_start</string>
-  <string name="text_assessment">text_assessment</string>
-  <string name="text_journal">text_journal</string>
-  <string name="text_landing_page">text_landing_page</string>
-  <string name="text_lessons">text_lessons</string>
-  <string name="start_button">start_button</string>
 
 
-    <string name="error_message">Unable to retrieve data requested. (%s)</string>
-    <string name="information">Information</string>
-    <string name="info_ok">OK</string>
-    <string name="journal_fragment_title">Journal Entry</string>
+  <string name="error_message">Unable to retrieve data requested. (%s)</string>
 
 
-    <string name="journal_item_title">Journal Note</string>
-
-
-    <string name="default_description">Default description</string>
-    <string name="date_label">Date:</string>
-  <string name="sign_out">sign_out</string>
   <string name="start_lable">Welcome</string>
   <string name="user_profile_lable">User Profile</string>
   <string name="scroll_review_input">Scroll Review Input</string>
   <string name="action">Action</string>
   <string name="profile">Profile</string>
   <string name="home">Home</string>
+  <string name="journal_entry">Journal Entry</string>
+  <string name="fetal_heart_rate">Fetal Heart Rate</string>
+  <string name="contraction">Contraction</string>
+  <string name="start">Start</string>
 
 
 </resources>

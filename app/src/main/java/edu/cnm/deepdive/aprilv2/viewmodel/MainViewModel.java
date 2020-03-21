@@ -6,22 +6,41 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import edu.cnm.deepdive.aprilv2.model.entity.Assessment;
+import edu.cnm.deepdive.aprilv2.model.repository.AssessmentRepository;
+import java.util.List;
 
 
 public class MainViewModel extends AndroidViewModel implements LifecycleObserver {
+
+  private AssessmentRepository repository;
+
   private MutableLiveData<Throwable> throwable;
+  private MutableLiveData<List<Assessment>> assessments;
 
 
   public MainViewModel(@NonNull Application application) {
     super(application);
     throwable = new MutableLiveData<>();
+    repository = new AssessmentRepository(application);
+    assessments = new MutableLiveData<>();
+  }
+
+  public void refresh() {
+    repository.getAll()
+        .subscribe(
+            assessments::postValue,
+            throwable::postValue
+        );
+  }
+
+  public LiveData<List<Assessment>> getAssessments() {
+    return assessments;
   }
 
   public LiveData<Throwable> getThrowable() {
     return throwable;
   }
-
-
 
 //  private void insertAssessment(ClientProfile clientProfile) {
 //    AssessmentDao assessmentDao = database.getAssessmentDao();
@@ -32,7 +51,6 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
 //        .subscribe(/*TODO Handle error result */);
 //  }
 
-
 //  private void insertFetalConditionDao(Assessment assessment) {
 //    FetalHeartRateDao fetalConditionDao = database.getFetalConditionDao();
 //    FetalHeartRate fetalCondition = new FetalHeartRate();
@@ -41,7 +59,6 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
 //        .subscribeOn(Schedulers.io())
 //        .subscribe(/*TODO Handle error result */);
 //  }
-
 
 //  private void insertLaborDao(Assessment assessment) {
 //    ContractionDao laborDao = database.getLaborDao();
