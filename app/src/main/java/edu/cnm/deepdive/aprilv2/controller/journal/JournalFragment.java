@@ -14,16 +14,13 @@ import edu.cnm.deepdive.aprilv2.R;
 public class JournalFragment extends Fragment {
   private RecyclerView journalList;
 
-  public JournalFragment() {
-    // Required empty public constructor
-  }
 
 
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     View layout = inflater.inflate(R.layout.fragment_journal, container, false);
-    journalList = layout.findViewById(R.id.journal_entry_note);
+    journalList = layout.findViewById(R.id.fragment_journal);
     return layout;
   }
 

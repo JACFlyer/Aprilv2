@@ -7,11 +7,11 @@
     tools:context=".controller.actionpage.ActionPageFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-      android:id="@+id/activities_list"
+      android:id="@+id/fragment_action_page"
       android:layout_width="0dp"
       android:layout_height="0dp"
-      android:background="@color/colorPrimary"
       android:orientation="vertical"
+      android:background="@color/colorAccent"
       app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,7 @@
     android:layout_marginEnd="16dp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintBottom_toTopOf="@+id/add_contraction"/>
-<!--  TODO Add source icon-->
+
 
   <com.google.android.material.floatingactionbutton.FloatingActionButton
     android:id="@+id/add_contraction"
@@ -35,7 +35,16 @@
     android:layout_marginBottom="16dp"
     android:layout_marginEnd="16dp"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintBottom_toTopOf="@+id/add_fhr"/>
-  <!--  TODO Add source icon-->
+    app:layout_constraintBottom_toTopOf="@+id/add_fetal_heart_rate"/>
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/add_fetal_heart_rate"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:layout_marginEnd="16dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"/>
+
 
   </androidx.constraintlayout.widget.ConstraintLayout>

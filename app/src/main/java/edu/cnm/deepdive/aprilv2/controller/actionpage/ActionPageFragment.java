@@ -32,7 +32,7 @@ public class ActionPageFragment extends Fragment {
       Bundle savedInstanceState) {
     // Inflate the layout for this fragment
     View root = inflater.inflate(R.layout.fragment_action_page, container, false);
-    activitiesList = root.findViewById(R.id.activities_list);
+    activitiesList = root.findViewById(R.id.fragment_action_page);
     return root;
   }
 

@@ -45,19 +45,6 @@ public class MainActivity extends AppCompatActivity {
   }
 
 
-  /**
-   * @Override public boolean onCreateOptionsMenu(Menu menu) { super.onCreateOptionsMenu(menu);
-   * getMenuInflater().inflate(R.menu.main_options, menu); return true; }
-   * @Override public boolean onOptionsItemSelected(@NonNull MenuItem item) { boolean handled =
-   * true; //noinspection SwitchStatementWithTooFewBranches switch (item.getItemId()) { //      case
-   * R.id.sign_out: //        GoogleSignInRepository.getInstance().signOut() //
-   * .addOnCompleteListener((task) -> { //              Intent intent = new Intent(this,
-   * LoginActivity.class); //              intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK |
-   * Intent.FLAG_ACTIVITY_NEW_TASK); //              startActivity(intent); //            }); //
-   *    break; //      case R.id.settings: //      Intent intent = new Intent(this,
-   * SettingsActivity.class); //    startActivity(intent); //        break; default: handled =
-   * super.onOptionsItemSelected(item); } return handled; }
-   **/
   public void setProgressVisibility(int visibility) {
     loading.setVisibility(visibility);
   }
@@ -83,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
   private void setupNavigation() {
     AppBarConfiguration appBarConfiguration =
-        new AppBarConfiguration.Builder(R.id.fragment_april_start, R.id.fragment_landing_page, R.id.fragment_profile)
+        new AppBarConfiguration.Builder(R.id.fragment_april_start, R.id.fragment_action_page, R.id.fragment_profile)
             .build();
     navController = Navigation.findNavController(this, R.id.nav_host_fragment);
     NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);

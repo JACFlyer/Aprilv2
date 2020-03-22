@@ -8,8 +8,8 @@
 
 
   <string name="start_lable">Welcome</string>
-  <string name="user_profile_lable">User Profile</string>
-  <string name="scroll_review_input">Scroll Review Input</string>
+  <string name="user_profile_label">My Profile</string>
+  <string name="action_history">Action History</string>
   <string name="action">Action</string>
   <string name="profile">Profile</string>
   <string name="home">Home</string>
@@ -17,6 +17,8 @@
   <string name="fetal_heart_rate">Fetal Heart Rate</string>
   <string name="contraction">Contraction</string>
   <string name="start">Start</string>
+  <string name="blank_profile">Blank Profile</string>
+  <string name="hello_blank_april_start_fragment">Hello Blank April Start Fragment</string>
 
 
 </resources>

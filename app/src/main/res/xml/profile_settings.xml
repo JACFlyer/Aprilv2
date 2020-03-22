@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
 <EditTextPreference
   android:key="name"
@@ -17,5 +16,22 @@
   <EditTextPreference
     android:key="email"
     android:title="Email"/>
+
+  <EditTextPreference
+    android:key="emergency_contact"
+    android:title="Emergency Contact"/>
+
+  <EditTextPreference
+    android:key="emergency_phone_contact"
+    android:title="Emergency Phone Contact"/>
+
+  <EditTextPreference
+    android:key="allergies"
+    android:title="Allergies"/>
+
+  <EditTextPreference
+    android:key="medications"
+    android:title="Medications"/>
+
 
 </PreferenceScreen>

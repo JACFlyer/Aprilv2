@@ -12,29 +12,29 @@
     tools:layout="@layout/fragment_april_start">
 
     <action
-      android:id="@+id/action_aprilStart_to_landingPage"
-      app:destination="@id/fragment_landing_page"/>
+      android:id="@+id/action_aprilStartFragment_to_actionPageFragment"
+      app:destination="@id/fragment_action_page"/>
   </fragment>
 
 
   <fragment
     android:id="@+id/fragment_profile"
     android:name="edu.cnm.deepdive.aprilv2.controller.profile.ProfileFragment"
-    android:label="@string/user_profile_lable">
+    android:label="@string/user_profile_label">
     <action
-      android:id="@+id/action_profileFragment_to_landingPage"
-      app:destination="@id/fragment_landing_page"/>
+      android:id="@+id/action_profileFragment_to_actionPageFragment"
+      app:destination="@id/fragment_action_page"/>
 
   </fragment>
 
 
   <fragment
-    android:id="@+id/fragment_landing_page"
+    android:id="@+id/fragment_action_page"
     android:name="edu.cnm.deepdive.aprilv2.controller.actionpage.ActionPageFragment"
-    android:label="@string/scroll_review_input"
+    android:label="@string/action_history"
     tools:layout="@layout/fragment_action_page">
     <action
-      android:id="@+id/action_landingPageFragment_to_profileFragment"
+      android:id="@+id/action_actionPageFragment_to_profileFragment"
       app:destination="@id/fragment_profile"/>
   </fragment>
 

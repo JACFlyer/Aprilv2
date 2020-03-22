@@ -8,7 +8,7 @@
 
 
   <item
-    android:id="@+id/fragment_landing_page"
+    android:id="@+id/fragment_action_page"
     android:tooltipText="Action"
     android:title="@string/action"/>
 

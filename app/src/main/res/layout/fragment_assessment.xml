@@ -6,8 +6,8 @@
   tools:context=".controller.assessment.AssessmentFragment">
 
 <androidx.recyclerview.widget.RecyclerView
-  android:layout_width=""
-  android:layout_height=""
+  android:layout_width="2dp"
+  android:layout_height="2dp"/>
 
 
 </FrameLayout>
