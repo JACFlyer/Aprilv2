@@ -72,13 +72,13 @@ These components remain the core functionality of the application beyond the sco
         
 ### [Entity Relationship Diagram](erd.md)    
 
-### [Client Profile Entity](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/entity/ClientProfile.java)    
-### [Client Profile Dao](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/dao/ClientProfileDao.java)    
-### [Client Profile Repository](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/repository/ClientProfileRepository.java)    
-
 ### [Assessment Entity](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/entity/Assessment.java)    
 ### [Assessment Dao](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/dao/AssessmentDao.java)    
 ### [Assessment Repository](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/repository/AssessmentRepository.java)    
+
+### [Client Profile Entity](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/entity/ClientProfile.java)    
+### [Client Profile Dao](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/dao/ClientProfileDao.java)    
+### [Client Profile Repository](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/repository/ClientProfileRepository.java)    
 
 ### [Labor Entity](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/entity/Labor.java)    
 ### [Labor Dao](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/dao/LaborDao.java)    
