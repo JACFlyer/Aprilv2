@@ -35,7 +35,32 @@ will subsequently have access to the patient's profile for monitoring and respon
 
 
 # Current State of the Application
+The application is not yet ready to deploy for testing.  The database is accessible, but database
+queries have not yet been tested.
 
+The Home page is functional but blank.  It was intended to display the patient's first name after
+the _Welcome_.  Also, general application instructions should be displayed here.  
+
+The add action buttons on the Action page are not yet connected for user input and database
+updating.  Also, the recycler-view feature, displaying all user entries in sequential order, is
+not complete.  Components of this view build are under construction.  
+
+The profile page does not display profile information, rather it records and stores the
+information through edit text buttons.  This page should read like a page in a true medical chart
+with the option of editing demographic information and clinical history. 
+
+The overall aesthetic of the app is not specific to women in labor.  The color scheme and fonts
+should be improved while maintaining the simplicity of the design.  Icons should be implemented
+judiciously.  An attempt at collaboration with a student of the digital design cohort did not
+manifest a usable image.  Customized icons should be considered a stretch goal.
+ 
+The API for real-time fetal heart rate monitoring and recording, has not been implemented.
+The cost of acquiring a heart rate monitor was prohibitive at this time.  However, a more affordable
+over-the-counter wireless pulse-oximeter may be a viable alternative for testing.
+
+Functional stretch goals include the USB adaptable ultrasound technology and vaginal camera.
+These components remain the core functionality of the application beyond the scope of this project.
+  
 
 
 # User Interface Design Documentation
@@ -116,7 +141,7 @@ Custom drawable assets
 
 
 
-# Optional Implementation Elements
+# Optional Implementation Elements Addressed
 
 Settings screen
 
