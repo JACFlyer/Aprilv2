@@ -17,7 +17,6 @@ import edu.cnm.deepdive.aprilv2.view.AssessmentRecyclerAdapter.AssessmentHolder;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.text.DateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -47,8 +46,6 @@ public class AssessmentRecyclerAdapter extends RecyclerView.Adapter<AssessmentHo
     holders.put(R.layout.item_contraction, ContractionHolder.class);
     layouts.put(FetalHeartRate.class, R.layout.item_fhr);
     holders.put(R.layout.item_fhr, FetalHeartRateHolder.class);
-
-
 
   }
 
@@ -92,6 +89,8 @@ public class AssessmentRecyclerAdapter extends RecyclerView.Adapter<AssessmentHo
 
   }
 
+
+
   private class JournalHolder extends AssessmentHolder {
 
     private final TextView timestamp;
@@ -112,48 +111,50 @@ public class AssessmentRecyclerAdapter extends RecyclerView.Adapter<AssessmentHo
     }
   }
 
+
   private class ContractionHolder extends AssessmentHolder {
 
     private final TextView timestamp;
+    private final TextView contractionStart;
+    private final TextView contractionIntensity;
+    private final TextView contractionEnd;
 
-    //  TODO Define UI fields.
 
     public ContractionHolder(@NonNull View itemView) {
-
-      //  TODO Get references to UI fields.
       super(itemView);
       timestamp = itemView.findViewById(R.id.timestamp);
-
+      contractionStart = itemView.findViewById(R.id.contraction_start_time);
+      contractionIntensity = itemView.findViewById(R.id.contraction_pain_value);
+      contractionEnd = itemView.findViewById(R.id.contraction_end_time);
     }
 
     @Override
     public void bind(Assessment assessment) {
       Contraction contraction = (Contraction) assessment;
       timestamp.setText(dateFormat.format(contraction.getTimestamp()) + " " + timeFormat.format(contraction.getTimestamp()));
-
-      //  TODO Populate UI fields with data from contraction.
+      contractionStart.setText(dateFormat.format(contraction.getTimestamp()) + " " + timeFormat.format(contraction.getTimestamp()));
+      contractionIntensity.setText(contraction.getIntensity());
+      contractionEnd.setText(dateFormat.format(contraction.getTimestamp()) + " " + timeFormat.format(contraction.getTimestamp()));
     }
   }
 
   private class FetalHeartRateHolder extends AssessmentHolder {
 
     private final TextView timestamp;
+    private final TextView fhrValue;
 
-    //  TODO Define UI fields.
 
     public FetalHeartRateHolder(@NonNull View itemView) {
       super(itemView);
       timestamp = itemView.findViewById(R.id.timestamp);
-
-      //  TODO Get references to UI fields.
+      this.fhrValue = itemView.findViewById(R.id.fhr_value);
     }
 
     @Override
     public void bind(Assessment assessment) {
       FetalHeartRate fhr = (FetalHeartRate) assessment;
       timestamp.setText(dateFormat.format(fhr.getTimestamp()) + " " + timeFormat.format(fhr.getTimestamp()));
-
-      //  TODO Populate UI fields with data from fhr.
+      fhrValue.setText(fhr.getFhr());
     }
   }
 }
