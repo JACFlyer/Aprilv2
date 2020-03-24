@@ -108,9 +108,12 @@ public class AssessmentRecyclerAdapter extends RecyclerView.Adapter<AssessmentHo
       Journal journal = (Journal) assessment;
       timestamp.setText(dateFormat.format(journal.getTimestamp()) + " " + timeFormat.format(journal.getTimestamp()));
       note.setText(journal.getNote());
+      /**clickView.setOnClickListener((v) ->
+       listener.onJournalClick(getAdapterPosition(), note));
+       **/
+
     }
   }
-
 
   private class ContractionHolder extends AssessmentHolder {
 
@@ -135,8 +138,17 @@ public class AssessmentRecyclerAdapter extends RecyclerView.Adapter<AssessmentHo
       contractionStart.setText(dateFormat.format(contraction.getTimestamp()) + " " + timeFormat.format(contraction.getTimestamp()));
       contractionIntensity.setText(contraction.getIntensity());
       contractionEnd.setText(dateFormat.format(contraction.getTimestamp()) + " " + timeFormat.format(contraction.getTimestamp()));
+
+      /**clickView.setOnClickListener((v) ->
+       listener.onContractionClick(getAdapterPosition(), contractionStart, contractionEnd, contractionIntensity));
+       **/
+
     }
   }
+
+
+
+
 
   private class FetalHeartRateHolder extends AssessmentHolder {
 
@@ -155,6 +167,10 @@ public class AssessmentRecyclerAdapter extends RecyclerView.Adapter<AssessmentHo
       FetalHeartRate fhr = (FetalHeartRate) assessment;
       timestamp.setText(dateFormat.format(fhr.getTimestamp()) + " " + timeFormat.format(fhr.getTimestamp()));
       fhrValue.setText(fhr.getFhr());
+
+        /**clickView.setOnClickListener((v) ->
+            listener.onFhrClick(getAdapterPosition(), fhrValue));
+         **/
+      }
     }
-  }
 }
