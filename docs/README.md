@@ -79,25 +79,21 @@ These components remain the core functionality of the application and beyond the
         
 ### [Entity Relationship Diagram](erd.md)    
 
-### [Assessment Entity](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/entity/Assessment.java)    
-### [Assessment Dao](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/dao/AssessmentDao.java)    
-### [Assessment Repository](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/repository/AssessmentRepository.java)    
+### [Assessment Entity](https://github.com/JACFlyer/Aprilv2/blob/master/app/src/main/java/edu/cnm/deepdive/aprilv2/model/entity/Assessment.java)    
+### [Assessment Repository](https://github.com/JACFlyer/Aprilv2/blob/master/app/src/main/java/edu/cnm/deepdive/aprilv2/model/repository/AssessmentRepository.java)    
 
-### [Client Profile Entity](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/entity/ClientProfile.java)    
-### [Client Profile Dao](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/dao/ClientProfileDao.java)    
-### [Client Profile Repository](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/repository/ClientProfileRepository.java)    
+### [Journal Entity](https://github.com/JACFlyer/Aprilv2/blob/master/app/src/main/java/edu/cnm/deepdive/aprilv2/model/entity/Journal.java)    
+### [Journal Dao](https://github.com/JACFlyer/Aprilv2/blob/master/app/src/main/java/edu/cnm/deepdive/aprilv2/model/dao/JournalDao.java)    
 
-### [Labor Entity](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/entity/Labor.java)    
-### [Labor Dao](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/dao/LaborDao.java)    
-### [Labor Repository](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/repository/LaborRepository.java)    
+### [Contraction Entity](https://github.com/JACFlyer/Aprilv2/blob/master/app/src/main/java/edu/cnm/deepdive/aprilv2/model/entity/Contraction.java)    
+### [Contraction Dao](https://github.com/JACFlyer/Aprilv2/blob/master/app/src/main/java/edu/cnm/deepdive/aprilv2/model/dao/ContractionDao.java)    
 
-### [Fetal Condition Entity](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/entity/FetalCondition.java)    
-### [Fetal Condition Dao](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/dao/FetalConditionDao.java)    
-### [Fetal Condition Repository](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/model/repository/FCRepository.java)    
+### [Fetal Heart Rate Entity](https://github.com/JACFlyer/Aprilv2/blob/master/app/src/main/java/edu/cnm/deepdive/aprilv2/model/entity/FetalHeartRate.java)    
+### [Fetal Heart Rate Dao](https://github.com/JACFlyer/Aprilv2/blob/master/app/src/main/java/edu/cnm/deepdive/aprilv2/model/dao/FetalHeartRateDao.java)    
 
 ### [Data Definition Language](ddl.md)
 
-### [Database Class](https://github.com/JACFlyer/april/blob/master/app/src/main/java/edu/cnm/deepdive/april/service/AprilDatabase.java)
+### [Database Class](https://github.com/JACFlyer/Aprilv2/blob/master/app/src/main/java/edu/cnm/deepdive/aprilv2/service/AprilDatabase.java)
 
 
 
