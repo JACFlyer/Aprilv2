@@ -20,6 +20,7 @@
 
   <com.google.android.material.floatingactionbutton.FloatingActionButton
     android:id="@+id/add_journal"
+    android:src="@drawable/ic_journal_black_24dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginBottom="16dp"
@@ -30,6 +31,7 @@
 
   <com.google.android.material.floatingactionbutton.FloatingActionButton
     android:id="@+id/add_contraction"
+    android:src="@drawable/ic_pregnant_woman_black_24dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginBottom="16dp"
@@ -39,6 +41,7 @@
 
   <com.google.android.material.floatingactionbutton.FloatingActionButton
     android:id="@+id/add_fetal_heart_rate"
+    android:src="@drawable/ic_child_care_black_24dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginBottom="16dp"

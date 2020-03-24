@@ -48,6 +48,8 @@ public class AssessmentRecyclerAdapter extends RecyclerView.Adapter<AssessmentHo
     layouts.put(FetalHeartRate.class, R.layout.item_fhr);
     holders.put(R.layout.item_fhr, FetalHeartRateHolder.class);
 
+
+
   }
 
 

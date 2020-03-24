@@ -3,17 +3,20 @@
 
   <item
     android:id="@+id/fragment_april_start"
+    android:icon="@drawable/ic_home_black_24dp"
     android:tooltipText="Landing Page"
     android:title="@string/home"/>
 
 
   <item
     android:id="@+id/fragment_action_page"
+    android:icon="@drawable/ic_directions_run_black_24dp"
     android:tooltipText="Action"
     android:title="@string/action"/>
 
   <item
     android:id="@+id/fragment_profile"
+    android:icon="@drawable/ic_person_black_24dp"
     android:tooltipText="Profile"
     android:title="@string/profile"/>
 

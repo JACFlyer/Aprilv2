@@ -16,9 +16,6 @@ import edu.cnm.deepdive.aprilv2.viewmodel.MainViewModel;
 public class AprilStartFragment extends Fragment {
 
 
-  public AprilStartFragment() {
-    // Required empty public constructor
-  }
 
   private RecyclerView aprilStart;
   private MainViewModel viewModel;
@@ -29,7 +26,7 @@ public class AprilStartFragment extends Fragment {
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     View layout = inflater.inflate(R.layout.fragment_april_start, container, false);
-   // aprilStart = layout.findViewById(R.id.fragment_summary_of_application);
+    aprilStart = layout.findViewById(R.id.fragment_april_start);
     return layout;
   }
 

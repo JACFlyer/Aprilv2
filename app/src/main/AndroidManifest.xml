@@ -6,7 +6,7 @@
     <application
       android:name=".AprilApplication"
       android:allowBackup="false"
-      android:icon="@drawable/ic_pregnant_woman_black_24dp"
+      android:icon="@drawable/ic_bloom__black_24dp"
       android:label="@string/app_name"
       android:roundIcon="@mipmap/ic_launcher_round"
       android:supportsRtl="true"

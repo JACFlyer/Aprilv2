@@ -25,16 +25,4 @@ public class JournalFragment extends Fragment {
   }
 
 
-/**
-  @Override
-  public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-    super.onViewCreated(view, savedInstanceState);
-    MainViewModel viewModel = new ViewModelProvider(getActivity()).get(MainViewModel.class);
-    viewModel.getAllApodSummaries().observe(getViewLifecycleOwner(), (apods) -> {
-      JournalFragmentRecyclerAdapter adapter = new JournalFragmentRecyclerAdapter(getContext(), apods, (v, apod, pos) ->
-          ((MainActivity) getActivity()).loadJournalFragment(journalList.getDate()));
-      journalList.setAdapter(adapter);
-    });
-  }
-**/
 }
