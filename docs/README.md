@@ -105,8 +105,7 @@ These components remain the core functionality of the application and beyond the
 
 
 # Javadoc-generated Technical Documentation
-### [Javadoc](index.html) 
-file:///C:/Users/Jonathan%20Cade/Desktop/bootcamp/projects/april-v2/docs/api/index.html
+### file:///C:/Users/Jonathan%20Cade/Desktop/bootcamp/projects/april-v2/docs/api/index.html
 
 # Copyrights and Licenses
 ### [Copyrights & Licenses](notice.md)  
