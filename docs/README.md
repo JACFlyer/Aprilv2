@@ -110,7 +110,7 @@ These components remain the core functionality of the application and beyond the
 
 
 # Copyrights and Licenses
-### [Copyrights & Licenses](.md)  
+### [Copyrights & Licenses](notice.md)  
 
 
 # Build Instructions
