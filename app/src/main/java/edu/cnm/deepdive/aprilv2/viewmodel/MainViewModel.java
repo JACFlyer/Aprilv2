@@ -10,15 +10,23 @@ import edu.cnm.deepdive.aprilv2.model.entity.Assessment;
 import edu.cnm.deepdive.aprilv2.model.repository.AssessmentRepository;
 import java.util.List;
 
-
+/**
+ * This is the MainViewModel class
+ */
 public class MainViewModel extends AndroidViewModel implements LifecycleObserver {
 
+  /**
+   * Class fields
+   */
   private AssessmentRepository repository;
-
   private MutableLiveData<Throwable> throwable;
   private MutableLiveData<List<Assessment>> assessments;
 
-
+  /**
+   * Class constructor
+   *
+   * @param application
+   */
   public MainViewModel(@NonNull Application application) {
     super(application);
     throwable = new MutableLiveData<>();
@@ -26,6 +34,9 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
     assessments = new MutableLiveData<>();
   }
 
+  /**
+   * This method refreshes the MainViewModel to receive new assessments.
+   */
   public void refresh() {
     repository.getAll()
         .subscribe(
@@ -34,6 +45,11 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
         );
   }
 
+  /**
+   * Getters & Setters
+   *
+   * @return
+   */
   public LiveData<List<Assessment>> getAssessments() {
     return assessments;
   }

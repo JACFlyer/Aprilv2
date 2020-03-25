@@ -77,7 +77,6 @@ These components remain the core functionality of the application and beyond the
 
 
 # Data Model Design Documentation
-        
 ### [Entity Relationship Diagram](erd.md)    
 
 ### [Assessment Entity](https://github.com/JACFlyer/Aprilv2/blob/master/app/src/main/java/edu/cnm/deepdive/aprilv2/model/entity/Assessment.java)    
@@ -106,18 +105,16 @@ These components remain the core functionality of the application and beyond the
 
 
 # Javadoc-generated Technical Documentation
-
+### [Javadoc Documentation](.md)  
 
 
 # Copyrights and Licenses
-This application was designed, developed and coded by J. Asa Cade.
-Copyright pending:  Cade Clinical Consulting, LLC, 2020
-
+### [Copyrights & Licenses](.md)  
 
 
 # Build Instructions
 *  Install and launch the application on an Android device (minimum API 21) or emulator.
-*  Navigate the app following the user instruction.
+*  Navigate the app following the user instructions.
 *  Escape the app using the back arrow button on your device's navigation bar.
 *  Launch the application, again, by touching the _April_ icon on your device's applications list.
 

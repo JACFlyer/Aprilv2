@@ -16,51 +16,72 @@ import edu.cnm.deepdive.aprilv2.model.entity.Journal;
 import edu.cnm.deepdive.aprilv2.service.AprilDatabase.Converters;
 import java.util.Date;
 
-/*  The @Database annotation, with an entities argument that specifies all of the entity classes in the data model. */
+
+/**
+ * The @Database annotation, with an entities argument that specifies all of the entity classes in
+ * the data model.
+ **/
 @Database(
-      entities = {Journal.class, Contraction.class, FetalHeartRate.class},
-      version = 1,
-      exportSchema = true
-  )
-  @TypeConverters({Converters.class})
-  public abstract class AprilDatabase extends RoomDatabase {
+    entities = {Journal.class, Contraction.class, FetalHeartRate.class},
+    version = 1,
+    exportSchema = true
+)
 
-    private static final String DB_NAME = "client_db";
+/**
+ * The AprilDatabase is herein constructed as an extension of the RoomDatabase.
+ */
+@TypeConverters({Converters.class})
+public abstract class AprilDatabase extends RoomDatabase {
 
-    private static Context context;
-    public static void setContext(Context context) {
-      AprilDatabase.context = context;
-    }
+  /**
+   * Class fields
+   */
+  private static final String DB_NAME = "client_db";
 
-    public static AprilDatabase getInstance() {
-      return InstanceHolder.INSTANCE;
-    }
+  /**
+   * Constructors
+   */
+  private static Context context;
+
+  public static void setContext(Context context) {
+    AprilDatabase.context = context;
+  }
+
+  public static AprilDatabase getInstance() {
+    return InstanceHolder.INSTANCE;
+  }
+
+  public abstract JournalDao getJournalDao();
+
+  public abstract ContractionDao getContractionDao();
+
+  public abstract FetalHeartRateDao getFetalHeartRateDao();
 
 
-
-    /* Abstract methods returning instances of DAO interfaces. */
-    public abstract JournalDao getJournalDao();
-    public abstract ContractionDao getContractionDao();
-    public abstract FetalHeartRateDao getFetalHeartRateDao();
-
-
-
+  /**
+   * This nested class builds the instance of the database.
+   */
   public static class InstanceHolder {
-      private static final AprilDatabase INSTANCE = Room.databaseBuilder(
-          context, AprilDatabase.class, DB_NAME)
-          .build();
+
+    private static final AprilDatabase INSTANCE = Room.databaseBuilder(
+        context, AprilDatabase.class, DB_NAME)
+        .build();
+  }
+
+  /**
+   * These nested classes allow for the conversion of date and time types.
+   */
+  public static class Converters {
+
+    @TypeConverter
+    public static Long fromDate(Date date) {
+      return (date != null) ? date.getTime() : null;
     }
 
-    public static class Converters {
-      @TypeConverter
-      public static Long fromDate(Date date) {
-        return (date != null) ? date.getTime() : null;
-      }
-
-      @TypeConverter
-      public static Date fromLong(Long value) {
-        return (value != null) ? new Date(value) : null;
-      }
+    @TypeConverter
+    public static Date fromLong(Long value) {
+      return (value != null) ? new Date(value) : null;
     }
+  }
 
 }

@@ -21,9 +21,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * This is the RecyclerView adapter for the AssessmentHolder.
+ */
 public class AssessmentRecyclerAdapter extends RecyclerView.Adapter<AssessmentHolder> {
 
-
+  /**
+   * Class fields The fields are constants as they manage the transference of view objects from the
+   * three entities.
+   */
   private final Context context;
   private final List<Assessment> assessments;
   private final Map<Class<? extends Assessment>, Integer> layouts;
@@ -31,7 +37,14 @@ public class AssessmentRecyclerAdapter extends RecyclerView.Adapter<AssessmentHo
   private final DateFormat dateFormat;
   private final DateFormat timeFormat;
 
-
+  /**
+   * Class constructor Herein, layouts from the input pages of the three entities are held in entity
+   * specific holders and they will later be managed as [assessments] through the
+   * AssessmentRepository.
+   *
+   * @param context
+   * @param assessments
+   */
   public AssessmentRecyclerAdapter(Context context,
       List<Assessment> assessments) {
     this.context = context;
@@ -89,24 +102,44 @@ public class AssessmentRecyclerAdapter extends RecyclerView.Adapter<AssessmentHo
 
   }
 
+  /**
+   * These are nested classes which extend the AssessmentHolder class.  Each holds objects from the
+   * an entity class.
+   */
 
-
+  /**
+   * JournalHolder class
+   */
   private class JournalHolder extends AssessmentHolder {
 
+    /**
+     * Class fields
+     */
     private final TextView timestamp;
     private final TextView note;
 
-
+    /**
+     * Class constructor declares the the entity objects to be viewed.
+     *
+     * @param itemView
+     */
     public JournalHolder(@NonNull View itemView) {
       super(itemView);
       timestamp = itemView.findViewById(R.id.timestamp);
       note = itemView.findViewById(R.id.note);
     }
 
+    /**
+     * This method binds (or declares) the (Journal assessment) object to be an object of the
+     * Assessment class.
+     *
+     * @param assessment
+     */
     @Override
     public void bind(Assessment assessment) {
       Journal journal = (Journal) assessment;
-      timestamp.setText(dateFormat.format(journal.getTimestamp()) + " " + timeFormat.format(journal.getTimestamp()));
+      timestamp.setText(dateFormat.format(journal.getTimestamp()) + " " + timeFormat
+          .format(journal.getTimestamp()));
       note.setText(journal.getNote());
       /**clickView.setOnClickListener((v) ->
        listener.onJournalClick(getAdapterPosition(), note));
@@ -115,14 +148,24 @@ public class AssessmentRecyclerAdapter extends RecyclerView.Adapter<AssessmentHo
     }
   }
 
+  /**
+   * ContractionHolder class
+   */
   private class ContractionHolder extends AssessmentHolder {
 
+    /**
+     * Class fields
+     */
     private final TextView timestamp;
     private final TextView contractionStart;
     private final TextView contractionIntensity;
     private final TextView contractionEnd;
 
-
+    /**
+     * Class constructor declares the entity objects to be viewed.
+     *
+     * @param itemView
+     */
     public ContractionHolder(@NonNull View itemView) {
       super(itemView);
       timestamp = itemView.findViewById(R.id.timestamp);
@@ -131,13 +174,22 @@ public class AssessmentRecyclerAdapter extends RecyclerView.Adapter<AssessmentHo
       contractionEnd = itemView.findViewById(R.id.contraction_end_time);
     }
 
+    /**
+     * This method binds (or declares) the (Contraction assessment) object to be an object of the
+     * Assessment class.
+     *
+     * @param assessment
+     */
     @Override
     public void bind(Assessment assessment) {
       Contraction contraction = (Contraction) assessment;
-      timestamp.setText(dateFormat.format(contraction.getTimestamp()) + " " + timeFormat.format(contraction.getTimestamp()));
-      contractionStart.setText(dateFormat.format(contraction.getTimestamp()) + " " + timeFormat.format(contraction.getTimestamp()));
+      timestamp.setText(dateFormat.format(contraction.getTimestamp()) + " " + timeFormat
+          .format(contraction.getTimestamp()));
+      contractionStart.setText(dateFormat.format(contraction.getTimestamp()) + " " + timeFormat
+          .format(contraction.getTimestamp()));
       contractionIntensity.setText(contraction.getIntensity());
-      contractionEnd.setText(dateFormat.format(contraction.getTimestamp()) + " " + timeFormat.format(contraction.getTimestamp()));
+      contractionEnd.setText(dateFormat.format(contraction.getTimestamp()) + " " + timeFormat
+          .format(contraction.getTimestamp()));
 
       /**clickView.setOnClickListener((v) ->
        listener.onContractionClick(getAdapterPosition(), contractionStart, contractionEnd, contractionIntensity));
@@ -146,31 +198,44 @@ public class AssessmentRecyclerAdapter extends RecyclerView.Adapter<AssessmentHo
     }
   }
 
-
-
-
-
+  /**
+   * FetalHeartRateHolder class
+   */
   private class FetalHeartRateHolder extends AssessmentHolder {
 
+    /**
+     * Class fields
+     */
     private final TextView timestamp;
     private final TextView fhrValue;
 
-
+    /**
+     * The class constructor declares the entity objects to be viewed.
+     *
+     * @param itemView
+     */
     public FetalHeartRateHolder(@NonNull View itemView) {
       super(itemView);
       timestamp = itemView.findViewById(R.id.timestamp);
       this.fhrValue = itemView.findViewById(R.id.fhr_value);
     }
 
+    /**
+     * This method binds (or declares) the (FetalHeartRate assessment) object to be an object of the
+     * Assessment class.
+     *
+     * @param assessment
+     */
     @Override
     public void bind(Assessment assessment) {
       FetalHeartRate fhr = (FetalHeartRate) assessment;
-      timestamp.setText(dateFormat.format(fhr.getTimestamp()) + " " + timeFormat.format(fhr.getTimestamp()));
+      timestamp.setText(
+          dateFormat.format(fhr.getTimestamp()) + " " + timeFormat.format(fhr.getTimestamp()));
       fhrValue.setText(fhr.getFhr());
 
-        /**clickView.setOnClickListener((v) ->
-            listener.onFhrClick(getAdapterPosition(), fhrValue));
-         **/
-      }
+      /**clickView.setOnClickListener((v) ->
+       listener.onFhrClick(getAdapterPosition(), fhrValue));
+       **/
     }
+  }
 }
