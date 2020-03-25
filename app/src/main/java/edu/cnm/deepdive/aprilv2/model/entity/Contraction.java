@@ -7,10 +7,15 @@ import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 import java.util.Date;
 
-
+/**
+ * This is the Contraction entity class.
+ */
 @Entity(inheritSuperIndices = true)
 public class Contraction extends Assessment {
 
+  /**
+   * Class fields There is no foreign key.
+   */
   @ColumnInfo(name = "contraction_id")
   @PrimaryKey(autoGenerate = true)
   private long id;
@@ -21,6 +26,11 @@ public class Contraction extends Assessment {
   private int intensity;
 
 
+  /**
+   * Getters and Setters
+   *
+   * @return
+   */
   @Override
   public long getId() {
     return id;
@@ -30,7 +40,6 @@ public class Contraction extends Assessment {
   public void setId(long id) {
     this.id = id;
   }
-
 
   public Date getStart() {
     return start;

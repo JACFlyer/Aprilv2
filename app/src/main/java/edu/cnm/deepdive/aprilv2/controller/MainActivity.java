@@ -22,11 +22,14 @@ import java.util.Calendar;
 import edu.cnm.deepdive.aprilv2.service.AprilDatabase;
 import edu.cnm.deepdive.aprilv2.R;
 
-
+/**
+ * This is the controller class for the application Main Activity.
+ */
 public class MainActivity extends AppCompatActivity {
 
-  // private static final int EXTERNAL_STORAGE_REQUEST_CODE = 1000;
-
+  /**
+   * Class fields
+   */
   private MainViewModel viewModel;
   private NavController navController;
   private ProgressBar loading;
@@ -35,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
   private NavOptions navOptions;
 
 
+  /**
+   * The onCreate method the main activity layout, and sets up the viewModel and navigation path.
+   *
+   * @param savedInstanceState
+   */
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -45,11 +53,22 @@ public class MainActivity extends AppCompatActivity {
   }
 
 
+  /**
+   * The setProgressVisibility method is an optional task of making visible the status of Main
+   * Activity loading.
+   *
+   * @param visibility
+   */
   public void setProgressVisibility(int visibility) {
     loading.setVisibility(visibility);
   }
 
 
+  /**
+   * This toast method communicates loading progress to the user.
+   *
+   * @param message
+   */
   public void showToast(String message) {
     setProgressVisibility(View.GONE);
     Toast toast = Toast.makeText(this, message, Toast.LENGTH_LONG);
@@ -58,6 +77,10 @@ public class MainActivity extends AppCompatActivity {
     toast.show();
   }
 
+  /**
+   * The setupViewModel method assigns MainViewModel objects to viewModel.  There is a response for
+   * the condition of null throwable objects.  Here, viewModel is the observer of objects.
+   */
   private void setupViewModel() {
     viewModel = new ViewModelProvider(this).get(MainViewModel.class);
     viewModel.getThrowable().observe(this, (throwable) -> {
@@ -68,19 +91,19 @@ public class MainActivity extends AppCompatActivity {
     getLifecycle().addObserver(viewModel);
   }
 
+  /**
+   * The setupNavigation method builds and displays the bottom navigation bar, and links to it the
+   * appropriate navigation paths.
+   */
   private void setupNavigation() {
     AppBarConfiguration appBarConfiguration =
-        new AppBarConfiguration.Builder(R.id.fragment_april_start, R.id.fragment_action_page, R.id.fragment_profile)
+        new AppBarConfiguration.Builder(R.id.fragment_april_start, R.id.fragment_action_page,
+            R.id.fragment_profile)
             .build();
     navController = Navigation.findNavController(this, R.id.nav_host_fragment);
     NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
     navigator = findViewById(R.id.navigator);
     NavigationUI.setupWithNavController(navigator, navController);
 
-
-
   }
-
 }
-
-

@@ -10,10 +10,18 @@ import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
 
-
+/**
+ * This is the Dao interface for the FetalHeartRate class.
+ */
 @Dao
 public interface FetalHeartRateDao {
 
+  /**
+   * These are insert, delete and query commands managing class information in the database.
+   *
+   * @param fetalHeartRate
+   * @return
+   */
   @Insert
   Single<Long> insert(FetalHeartRate fetalHeartRate);
 
@@ -22,7 +30,6 @@ public interface FetalHeartRateDao {
 
   @Insert
   Single<List<Long>> insert(FetalHeartRate... fetalHeartRates);
-
 
 
   @Delete
@@ -35,13 +42,11 @@ public interface FetalHeartRateDao {
   Single<Integer> delete(FetalHeartRate... fetalHeartRates);
 
 
-
   @Query("SELECT * FROM FetalHeartRate ORDER BY timestamp DESC")
   Single<List<FetalHeartRate>> select();
 
   @Query("SELECT * FROM FetalHeartRate WHERE fetal_id = :id")
   Single<FetalHeartRate> select(long id);
-
 
 
 }

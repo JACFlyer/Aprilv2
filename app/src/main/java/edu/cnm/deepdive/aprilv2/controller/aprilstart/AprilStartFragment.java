@@ -13,15 +13,28 @@ import androidx.recyclerview.widget.RecyclerView;
 import edu.cnm.deepdive.aprilv2.R;
 import edu.cnm.deepdive.aprilv2.viewmodel.MainViewModel;
 
+
+/**
+ * This is the controller class for the Home page.
+ */
 public class AprilStartFragment extends Fragment {
 
 
-
+  /**
+   * These are fields of the class.
+   */
   private RecyclerView aprilStart;
   private MainViewModel viewModel;
 
 
-
+  /**
+   * The onCreateView method inflates the layout for the fragment.
+   *
+   * @param inflater
+   * @param container
+   * @param savedInstanceState
+   * @return
+   */
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
@@ -31,10 +44,15 @@ public class AprilStartFragment extends Fragment {
   }
 
 
+  /**
+   * The onViewCreated method assigns to the viewModel elements of the MainViewModel
+   *
+   * @param view
+   * @param savedInstanceState
+   */
   @Override
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
     viewModel = new ViewModelProvider(this).get(MainViewModel.class);
   }
-
 }

@@ -14,8 +14,14 @@ import io.reactivex.schedulers.Schedulers;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This is the sole entity-related repository class for the application.
+ */
 public class AssessmentRepository {
 
+  /**
+   * Class fields
+   */
   private static final int NETWORK_THREAD_COUNT = 10;
 
   private final AprilDatabase database;
@@ -24,17 +30,22 @@ public class AssessmentRepository {
 
 
   /**
-   * Constructor for repository
+   * Constructor
    *
    * @param context
-   **/
+   */
   public AssessmentRepository(Context context) {
     this.context = context;
     database = AprilDatabase.getInstance();
   }
 
 
-/** Save Methods **/
+  /**
+   * Save methods
+   *
+   * @param journal
+   * @return
+   */
   public Completable saveJournal(Journal journal) {
     return Completable.fromSingle(
         database.getJournalDao().insert(journal)
@@ -57,14 +68,19 @@ public class AssessmentRepository {
   }
 
 
-/** getAll Method **/
+  /**
+   * Method to getAll
+   *
+   * @return
+   */
   public Flowable<List<Assessment>> getAll() {
     return database.getContractionDao().select()
         .subscribeOn(Schedulers.io())
         .map((contractions) -> (List<Assessment>) new ArrayList<Assessment>(contractions))
 
         .concatWith(
-            database.getFetalHeartRateDao().select().map((fetalHeartRates) -> new ArrayList<Assessment>(fetalHeartRates))
+            database.getFetalHeartRateDao().select()
+                .map((fetalHeartRates) -> new ArrayList<Assessment>(fetalHeartRates))
         )
         .concatWith(
             database.getJournalDao().select().map((journals) -> new ArrayList<Assessment>(journals))
@@ -73,22 +89,27 @@ public class AssessmentRepository {
   }
 
 
-/** Remove Methods **/
-public Completable remove(Journal journal) {
+  /**
+   * Remove methods
+   *
+   * @param journal
+   * @return
+   */
+  public Completable removeJournal(Journal journal) {
     return Completable.fromSingle(
         database.getJournalDao().delete(journal)
             .subscribeOn(Schedulers.io())
     );
   }
 
-  public Completable remove(FetalHeartRate fetalHeartRate) {
+  public Completable removeFetalHeartRate(FetalHeartRate fetalHeartRate) {
     return Completable.fromSingle(
         database.getFetalHeartRateDao().delete(fetalHeartRate)
             .subscribeOn(Schedulers.io())
     );
   }
 
-  public Completable remove(Contraction contraction) {
+  public Completable removeContraction(Contraction contraction) {
     return Completable.fromSingle(
         database.getContractionDao().delete(contraction)
             .subscribeOn(Schedulers.io())

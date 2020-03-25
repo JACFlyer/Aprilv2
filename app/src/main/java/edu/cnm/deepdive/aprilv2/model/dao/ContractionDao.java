@@ -10,10 +10,19 @@ import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
 
-
+/**
+ * This is the Dao interface for the Contraction class.
+ */
 @Dao
 public interface ContractionDao {
 
+
+  /**
+   * These are insert, delete and query commands managing class information in the database.
+   *
+   * @param contraction
+   * @return
+   */
   @Insert
   Single<Long> insert(Contraction contraction);
 
@@ -24,7 +33,6 @@ public interface ContractionDao {
   Single<List<Long>> insert(Contraction... contractions);
 
 
-
   @Delete
   Single<Integer> delete(Contraction contraction);
 
@@ -33,7 +41,6 @@ public interface ContractionDao {
 
   @Delete
   Single<Integer> delete(Contraction... contractions);
-
 
 
   @Query("SELECT * FROM Contraction ORDER BY timestamp DESC")

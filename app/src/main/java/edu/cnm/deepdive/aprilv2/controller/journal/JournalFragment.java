@@ -14,12 +14,26 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import edu.cnm.deepdive.aprilv2.R;
 import java.util.UUID;
 
-
+/**
+ * This is the controller class for the Journal page.
+ */
 public class JournalFragment extends Fragment {
 
+  /**
+   * Class field
+   */
   private RecyclerView journalList;
 
 
+  /**
+   * The onCreateView method inflates the layout of the Journal page.
+   * Each fragment_journal (objects of notes with timestamps) is assigned to the journalList.
+   * A FAB on the page allows for adding new notes.
+   * @param inflater
+   * @param container
+   * @param savedInstanceState
+   * @return
+   */
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
@@ -30,6 +44,10 @@ public class JournalFragment extends Fragment {
     return layout;
 }
 
+  /**
+   * The addNote method remains to be constructed and bound to the FAB on the journal page.
+   * @param note
+   */
   private void addNote(String note) {
   }
 }
