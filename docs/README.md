@@ -36,7 +36,8 @@ will subsequently have access to the patient's profile for monitoring and respon
 
 # Current State of the Application
 The application is not yet ready to deploy for testing.  The database is accessible, while database
-queries have not yet been tested.
+queries have not yet been tested.  Subsequently, the data definition language documentation
+is not current.
 
 The Home page is functional and blank.  It is intended to display the patient's first name after
 the _Welcome_.  Also, application functionality information, and user instructions should
@@ -98,17 +99,9 @@ These components remain the core functionality of the application and beyond the
 
 
 # Technical Requirements and Dependencies        
-* Google GPS for 911 connection, [Bandwidth 911 Access](https://bandwidth.com/911).  This link will allow for seamless transition from a negative assessment to calling for help.  April is not dependent on this function.
-
-* Fetal Heart Rate monitoring software and Wi-Fi enabled emitter, [Edan SDI Ultrasonic Pocket Doppler](https://fetaldoppler.net/fd340-fetal-doppler.html).  This API and device allows for the capture of the fetal heart rate.  This feature supports the critical project functionality of April.
- 
-* Cervical Camera software and Wi Fi enabled device, [SVAKOM Siime Inteligent Camera](https://www.amazon.com/Authentic-Wireless-Vibrator-Waterproof-Massager/dp/B01DVQOLEA/ref=pd_day0_c_121_3/130-5634076-1338833?_encoding=UTF8&pd_rd_i=B01DVQOLEA&pd_rd_r=73fa6798-7050-40d9-8039-7dced9229204&pd_rd_w=EwUVf&pd_rd_wg=Bgb5y&pf_rd_p=47a9d55c-4dbb-48fe-a136-8e1abc72e8e6&pf_rd_r=F66E8CJ6654ZK5TQJQA5&psc=1&refRID=F66E8CJ6654ZK5TQJQA5
-).  This API and device allow the condition of the cervix to be captured in real-time images.  The device supports the critical project functionality of April.  Future versions of the app will allow for AI interpretation of the database of cervical images in the attempt to develop a predictive algorhythm of visible cervical condition and time-to-delivery.
-
-* Abdominal Ultrasound software and Wi Fi enabled transducer, [MobiSante](http://www.mobisante.com/).  This API and device will allow for the evaluation of residual amniotic fluid after the ROM.  Fetal presentation will also be observable by the provider while mom is yet at home.  The device supports advanced functionality of April.
-
-* Considering and alternative corded Android capable camera fixed to vaginal suppository inserter.  This is a USB enabled Endoscope [Camera](https://www.amazon.com/Anykit-Megapixels-Inspection-Waterproof-Semi-Rigid/dp/B07NW4C7JG/ref=sr_1_17?keywords=vaginal+camera&qid=1582731129&sr=8-17) applied with an [Applicator](https://www.amazon.com/BoriCap-Suppository-Suppositories-Individually-Recommended/dp/B01M1NJOIF/ref=sr_1_24?keywords=vaginal+camera&qid=1582731694&sr=8-24)
-This device is a more likely application for the immediate project yet a stretch goal.
+*  Minimum Android API 21 required
+*  App tested on Samsung S6.  All testing was in vertical orientation.  Results of running in landscape mode unknown.  
+*  Androidx, Stetho, Google Code, SquareUp, Commons, Reactivex, Javax, JUnit, and Reactive Streams libraries used.
 
 
 
@@ -117,37 +110,18 @@ This device is a more likely application for the immediate project yet a stretch
 
 
 # Copyrights and Licenses
+This application was designed, developed and coded by J. Asa Cade.
+Copyright pending:  Cade Clinical Consulting, LLC, 2020
 
 
 
 # Build Instructions
+*  Install and launch the application on an Android device (minimum API 21) or emulator.
+*  Navigate the app following the user instruction.
+*  Escape the app using the back arrow button on your device's navigation bar.
+*  Launch the application, again, by touching the _April_ icon on your device's applications list.
 
 
 
 # Basic User Instructions
-
-
-
-# Required Implementation Elements
-
-Multiple Screens with intuitive navigation
-
-Use of the SQLite database
-
-Dynamic data-driven UI components
-
-Use of shared preferences
-
-User login/authentication
-
-Custom drawable assets
-
-
-
-# Optional Implementation Elements Addressed
-
-Settings screen
-
-Effective separation of concerns
-
-Code quality and style
+### [User Instructions](user-instructions.md)  
