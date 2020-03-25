@@ -45,11 +45,6 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
         );
   }
 
-  /**
-   * Getters & Setters
-   *
-   * @return
-   */
   public LiveData<List<Assessment>> getAssessments() {
     return assessments;
   }
